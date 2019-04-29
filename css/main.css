@@ -1662,7 +1662,7 @@ pre .javascript .function {
   text-align: center;
 }
 #qr > div:hover p {
-  animation: roll 0.1s infinite linear;
+  animation: roll 1s infinite linear;
 }
 @-moz-keyframes roll {
   from {
@@ -1847,7 +1847,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #1dfeb0;
+  background: #77c11b;
 }
 .feed-link,
 .chat {
