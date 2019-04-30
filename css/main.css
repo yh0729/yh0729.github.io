@@ -1847,7 +1847,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ffe74f;
+  background: #ffa1b0;
 }
 .feed-link,
 .chat {
@@ -1999,7 +1999,6 @@ pre .javascript .function {
 .post-toc .nav-item {
   overflow: hidden;
   text-overflow: ellipsis;
-  white-space: nowrap;
   line-height: 1.8;
 }
 .post-toc .nav .nav-child {
@@ -2608,4 +2607,10 @@ embed {
 .gt-container .gt-comment-content .highlight ::selection {
   background: #2593a6;
   color: #fff;
+}
+.post-toc .nav .nav-child {
+  display: block;
+}
+.post-toc ol {
+  font-size: 13px;
 }
