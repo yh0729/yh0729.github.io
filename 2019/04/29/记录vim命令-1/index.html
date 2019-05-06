@@ -28,6 +28,13 @@
 
 
 
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2">
+
 
 
 
@@ -100,18 +107,18 @@
 
 
 
-  <meta name="description" content="linux学习之常用命令，持续更新1.vim常用命令    命令 解释     v 从光标当前位置开始，光标所经过的地方会被选中，再按一下v结束。   d 使用v选中后，删除   y 选中后，复制   p 粘贴   u 先esc，再按u撤销   :set nu 显示行号   i 插入   :$ 跳转到文末     2.多行操作2.1 多行删除首先在命令模式下，输入“：set nu”显示行号； 2.">
+  <meta name="description" content="linux学习之常用命令，持续更新1.vim常用命令   命令 解释     v 从光标当前位置开始，光标所经过的地方会被选中，再按一下v结束。   d 使用v选中后，删除   y 选中后，复制   p 粘贴   u 先esc，再按u撤销   :set nu 显示行号   i 插入   :$ 跳转到文末     2.多行操作2.1 多行删除首先在命令模式下，输入“：set nu”显示行号； 2.通">
 <meta name="keywords" content="vim">
 <meta property="og:type" content="article">
 <meta property="og:title" content="记录vim命令">
 <meta property="og:url" content="https://yh0729.github.io/2019/04/29/记录vim命令-1/index.html">
 <meta property="og:site_name" content="趁年轻别搞开发&#39;s blog">
-<meta property="og:description" content="linux学习之常用命令，持续更新1.vim常用命令    命令 解释     v 从光标当前位置开始，光标所经过的地方会被选中，再按一下v结束。   d 使用v选中后，删除   y 选中后，复制   p 粘贴   u 先esc，再按u撤销   :set nu 显示行号   i 插入   :$ 跳转到文末     2.多行操作2.1 多行删除首先在命令模式下，输入“：set nu”显示行号； 2.">
+<meta property="og:description" content="linux学习之常用命令，持续更新1.vim常用命令   命令 解释     v 从光标当前位置开始，光标所经过的地方会被选中，再按一下v结束。   d 使用v选中后，删除   y 选中后，复制   p 粘贴   u 先esc，再按u撤销   :set nu 显示行号   i 插入   :$ 跳转到文末     2.多行操作2.1 多行删除首先在命令模式下，输入“：set nu”显示行号； 2.通">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-04-29T07:32:01.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="记录vim命令">
-<meta name="twitter:description" content="linux学习之常用命令，持续更新1.vim常用命令    命令 解释     v 从光标当前位置开始，光标所经过的地方会被选中，再按一下v结束。   d 使用v选中后，删除   y 选中后，复制   p 粘贴   u 先esc，再按u撤销   :set nu 显示行号   i 插入   :$ 跳转到文末     2.多行操作2.1 多行删除首先在命令模式下，输入“：set nu”显示行号； 2.">
+<meta name="twitter:description" content="linux学习之常用命令，持续更新1.vim常用命令   命令 解释     v 从光标当前位置开始，光标所经过的地方会被选中，再按一下v结束。   d 使用v选中后，删除   y 选中后，复制   p 粘贴   u 先esc，再按u撤销   :set nu 显示行号   i 插入   :$ 跳转到文末     2.多行操作2.1 多行删除首先在命令模式下，输入“：set nu”显示行号； 2.通">
 
 
 
@@ -508,8 +515,7 @@
       
 
       
-        <h1 id="linux学习之常用命令，持续更新"><a href="#linux学习之常用命令，持续更新" class="headerlink" title="linux学习之常用命令，持续更新"></a>linux学习之常用命令，持续更新</h1><p><strong>1.vim常用命令</strong></p>
-<table>
+        <h1 id="linux学习之常用命令，持续更新"><a href="#linux学习之常用命令，持续更新" class="headerlink" title="linux学习之常用命令，持续更新"></a>linux学习之常用命令，持续更新</h1><h3 id="1-vim常用命令"><a href="#1-vim常用命令" class="headerlink" title="1.vim常用命令"></a>1.vim常用命令</h3><table>
 <thead>
 <tr>
 <th>命令</th>
@@ -552,17 +558,21 @@
 </tbody>
 </table>
 <hr>
-<p><strong>2.多行操作</strong><br><em>2.1 多行删除</em><br>首先在命令模式下，输入“：set nu”显示行号； 2.通过行号确定你要删除的行； 3.命令输入“：32,65d”,回车键，32-   65行就被删除了，很快捷吧，如果无意中删除错了，可以使用‘u’键恢复（命令模式下）</p>
+<h3 id="2-多行操作"><a href="#2-多行操作" class="headerlink" title="2.多行操作"></a>2.多行操作</h3><p><strong>2.1 多行删除</strong><br>首先在命令模式下，输入“<code>：set nu</code>”显示行号； 2.通过行号确定你要删除的行； 3.命令输入“：32,65d”,回车键，32-   65行就被删除了，很快捷吧，如果无意中删除错了，可以使用‘<code>u</code>’键恢复（命令模式下）</p>
 <hr>
-<p><strong>3.操作文件</strong></p>
-<p><em>3.1  cd</em><br>cd /home      进入 ‘/ home’ 目录’<br>cd ..               返回上一级目录<br>cd ../..            返回上两级目录<br>cd -               返回上次所在的目录<br>pwd              显示工作路径</p>
-<p><em>3.2 ls</em><br>ls                   查看目录中的文件<br>ls -a              显示隐藏文件<br>ls -l               显示文件和目录的详细资料</p>
-<p><em>3.3 mkdir  &amp;&amp; cp &amp;&amp; rm</em><br>mkdir  ‘xx’    创建名为xx的目录<br>mkdir -p /tmp/dir1/dir2 创建一个目录树<br>cp file1 file2 复制一个文件<br>rm -r  dir1 删除目录，不会删除里面文件<br>rm -rf dir1 删除一个叫做 ‘dir1’ 的目录并同时删除其里面内容<br>rm -rf dir1 dir2 同时删除两个目录及它们的内容 </p>
-<p><em>3.3 find</em><br>find / -name file1 从 ‘/‘ 开始进入根文件系统搜索文件和目录，如果find ‘/tmp’ -name file1,则查找tmp下的file1文件<br>find / -xdev -name *.sh 搜索以sh结尾的文件，忽略光驱、捷盘等可移动设备 </p>
-<p><strong>4.操作进程-获取端口号</strong><br>pgrep tomcat  快速直接查找进程id，查找tomcat的端口号<br>pidof tomcat  同上<br>killall tomcat  一般我们可以使用kill　-9 pid方式杀死一个进程，但是这样就需要先找到这个进程的进程id，实际上我们也可以直接根据名称杀死进程<br>pkill tomcat  同上<br>ps -p 21641 -o lstart,etime  查看进程已运行时间：其中21641是你要查看进程的进程id。</p>
-<p><strong>其他</strong><br>df -h 使用df命令可以快速查看各挂载路径磁盘占用情况。<br><figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">[root@izuf6dtic2d71rbvtn6126z tmp]# df -h</span><br><span class="line">Filesystem      Size  Used Avail Use% Mounted on</span><br><span class="line">/dev/vda1        <span class="number">40</span>G   <span class="number">12</span>G   <span class="number">26</span>G  <span class="number">31</span>% /</span><br><span class="line">devtmpfs        <span class="number">905</span>M     <span class="number">0</span>  <span class="number">905</span>M   <span class="number">0</span>% /dev</span><br><span class="line">tmpfs           <span class="number">920</span>M     <span class="number">0</span>  <span class="number">920</span>M   <span class="number">0</span>% /dev/shm</span><br><span class="line">tmpfs           <span class="number">920</span>M  <span class="number">944</span>K  <span class="number">919</span>M   <span class="number">1</span>% /run</span><br><span class="line">tmpfs           <span class="number">920</span>M     <span class="number">0</span>  <span class="number">920</span>M   <span class="number">0</span>% /sys/fs/cgroup</span><br><span class="line">tmpfs           <span class="number">184</span>M     <span class="number">0</span>  <span class="number">184</span>M   <span class="number">0</span>% /run/user/<span class="number">0</span></span><br></pre></td></tr></table></figure></p>
-<p>du -h –-max-depth=1 /home(或者-d 1)  当前目录以及各个子目录占用空间大小<br><figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">[root@izuf6dtic2d71rbvtn6126z tmp]<span class="meta"># du -h –-max-depth=1 /home</span></span><br><span class="line">du: cannot access ‘–-<span class="built_in">max</span>-depth=<span class="number">1</span>’: No such file <span class="keyword">or</span> directory</span><br><span class="line"><span class="number">4.0</span>K	/<span class="built_in">home</span>/mycat/.mozilla/extensions</span><br><span class="line"><span class="number">4.0</span>K	/<span class="built_in">home</span>/mycat/.mozilla/plugins</span><br><span class="line"><span class="number">12</span>K	/<span class="built_in">home</span>/mycat/.mozilla</span><br><span class="line"><span class="number">24</span>K	/<span class="built_in">home</span>/mycat</span><br><span class="line"><span class="number">36</span>K	/<span class="built_in">home</span>/jenkins/.java/fonts/<span class="number">1.8</span><span class="number">.0</span>_171</span><br><span class="line"><span class="number">40</span>K	/<span class="built_in">home</span>/jenkins/.java/fonts</span><br><span class="line"><span class="number">44</span>K	/<span class="built_in">home</span>/jenkins/.java</span><br><span class="line"><span class="number">52</span>K	/<span class="built_in">home</span>/jenkins</span><br><span class="line"><span class="number">80</span>K	/<span class="built_in">home</span></span><br></pre></td></tr></table></figure></p>
-<p>free -h 当前内存使用情况<br><figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[root@izuf6dtic2d71rbvtn6126z tmp]<span class="comment"># free -h</span></span><br><span class="line">              total        used        free      <span class="keyword">shared </span> <span class="keyword">buff/cache </span>  available</span><br><span class="line"><span class="symbol">Mem:</span>           <span class="number">1</span>.<span class="number">8</span>G        <span class="number">886</span>M         <span class="number">90</span>M        <span class="number">1</span>.<span class="number">0</span>M        <span class="number">861</span>M        <span class="number">746</span>M</span><br><span class="line"><span class="keyword">Swap: </span>           <span class="number">0</span>B          <span class="number">0</span>B          <span class="number">0</span>B</span><br></pre></td></tr></table></figure></p>
+<h3 id="3-操作文件"><a href="#3-操作文件" class="headerlink" title="3.操作文件"></a>3.操作文件</h3><p><strong>3.1  cd</strong><br><code>cd /home</code>      进入 ‘/ home’ 目录’<br><code>cd ..</code>             返回上一级目录<br><code>cd ../..</code>          返回上两级目录<br><code>cd -</code>               返回上次所在的目录<br><code>pwd</code>              显示工作路径</p>
+<hr>
+<p><strong>3.2 ls</strong><br><code>ls</code>                  查看目录中的文件<br><code>ls -a</code>              显示隐藏文件<br><code>ls -l</code>               显示文件和目录的详细资料</p>
+<hr>
+<p><strong>3.3 mkdir  &amp;&amp; cp &amp;&amp; rm</strong><br><code>mkdir  &#39;xx&#39;</code>    创建名为xx的目录<br><code>mkdir -p /tmp/dir1/dir2</code> 创建一个目录树<br><code>cp file1 file2</code> 复制一个文件<br><code>rm -r  dir1</code> 删除目录，不会删除里面文件<br><code>rm -rf dir1</code> 删除一个叫做 ‘dir1’ 的目录并同时删除其里面内容<br><code>rm -rf dir1 dir2</code> 同时删除两个目录及它们的内容 </p>
+<hr>
+<p><strong>3.3 find</strong><br><code>find / -name file1</code> 从 ‘/‘ 开始进入根文件系统搜索文件和目录，如果find ‘/tmp’ -name file1,则查找tmp下的file1文件<br><code>find / -xdev -name \*.sh</code> 搜索以sh结尾的文件，忽略光驱、捷盘等可移动设备 </p>
+<hr>
+<h3 id="4-操作进程-获取端口号"><a href="#4-操作进程-获取端口号" class="headerlink" title="4.操作进程-获取端口号"></a>4.操作进程-获取端口号</h3><p><code>pgrep tomcat</code> 快速直接查找进程id，查找tomcat的端口号<br><code>pidof  tomcat</code>  同上<br><code>killall  tomcat</code>  一般我们可以使用kill　-9 pid方式杀死一个进程，但是这样就需要先找到这个进程的进程id，实际上我们也可以直接根据名称杀死进程<br><code>pkill   tomcat</code>  同上<br><code>ps -p 21641 -o lstart,etime</code>  查看进程已运行时间：其中21641是你要查看进程的进程id。</p>
+<hr>
+<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p>df -h 使用df命令可以快速查看各挂载路径磁盘占用情况。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">[root@izuf6dtic2d71rbvtn6126z tmp]<span class="comment"># df -h</span></span><br><span class="line">Filesystem      Size  Used Avail Use% Mounted on</span><br><span class="line">/dev/vda1        40G   12G   26G  31% /</span><br><span class="line">devtmpfs        905M     0  905M   0% /dev</span><br><span class="line">tmpfs           920M     0  920M   0% /dev/shm</span><br><span class="line">tmpfs           920M  944K  919M   1% /run</span><br><span class="line">tmpfs           920M     0  920M   0% /sys/fs/cgroup</span><br><span class="line">tmpfs           184M     0  184M   0% /run/user/0</span><br></pre></td></tr></table></figure></p>
+<p>du -h –-max-depth=1 /home(或者-d 1)  当前目录以及各个子目录占用空间大小<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">[root@izuf6dtic2d71rbvtn6126z tmp]<span class="comment"># du -h –-max-depth=1 /home</span></span><br><span class="line">du: cannot access ‘–-max-depth=1’: No such file or directory</span><br><span class="line">4.0K	/home/mycat/.mozilla/extensions</span><br><span class="line">4.0K	/home/mycat/.mozilla/plugins</span><br><span class="line">12K	/home/mycat/.mozilla</span><br><span class="line">24K	/home/mycat</span><br><span class="line">36K	/home/jenkins/.java/fonts/1.8.0_171</span><br><span class="line">40K	/home/jenkins/.java/fonts</span><br><span class="line">44K	/home/jenkins/.java</span><br><span class="line">52K	/home/jenkins</span><br><span class="line">80K	/home</span><br></pre></td></tr></table></figure></p>
+<p>free -h 当前内存使用情况<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[root@izuf6dtic2d71rbvtn6126z tmp]<span class="comment"># free -h</span></span><br><span class="line">total        used        free      shared  buff/cache   available</span><br><span class="line">Mem:           1.8G        886M         90M        1.0M        861M        746M</span><br><span class="line">Swap:            0B          0B          0B</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -649,6 +659,27 @@
       
 
       
+      
+        <div class="post-widgets">
+        
+
+        
+
+        
+          
+          <div class="social_share">
+            
+            
+              <div id="needsharebutton-postbottom">
+                <span class="btn">
+                  <i class="fa fa-share-alt" aria-hidden="true"></i>
+                </span>
+              </div>
+            
+            
+          </div>
+        
+        </div>
       
       
 
@@ -749,6 +780,10 @@
                 <div class="site-state-item site-state-categories">
                   
                     
+                      <a href="/categories/">
+                    
+                  
+                    
                     
                       
                     
@@ -758,7 +793,7 @@
                     
                     <span class="site-state-item-count">3</span>
                     <span class="site-state-item-name">分类</span>
-                  
+                  </a>
                 </div>
               
 
@@ -766,6 +801,10 @@
                 
                 
                 <div class="site-state-item site-state-tags">
+                  
+                    
+                      <a href="/tags/">
+                    
                   
                     
                     
@@ -777,7 +816,7 @@
                     
                     <span class="site-state-item-count">3</span>
                     <span class="site-state-item-name">标签</span>
-                  
+                  </a>
                 </div>
               
             </nav>
@@ -819,6 +858,20 @@
 
           
           
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                友情链接
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://blog.enjoytoshare.club" title="https://blog.enjoytoshare.club" rel="noopener" target="_blank">WuGenQiang's blog</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
 
           
             
@@ -839,7 +892,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#linux学习之常用命令，持续更新"><span class="nav-number">1.</span> <span class="nav-text">linux学习之常用命令，持续更新</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#linux学习之常用命令，持续更新"><span class="nav-number">1.</span> <span class="nav-text">linux学习之常用命令，持续更新</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-vim常用命令"><span class="nav-number">1.0.1.</span> <span class="nav-text">1.vim常用命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-多行操作"><span class="nav-number">1.0.2.</span> <span class="nav-text">2.多行操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-操作文件"><span class="nav-number">1.0.3.</span> <span class="nav-text">3.操作文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-操作进程-获取端口号"><span class="nav-number">1.0.4.</span> <span class="nav-text">4.操作进程-获取端口号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他"><span class="nav-number">1.0.5.</span> <span class="nav-text">其他</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1401,6 +1454,18 @@
   
   <script src="/lib/needsharebutton/needsharebutton.js"></script>
   <script>
+    
+      pbOptions = {};
+      
+        pbOptions.iconStyle = "box";
+      
+        pbOptions.boxForm = "horizontal";
+      
+        pbOptions.position = "right";
+      
+        pbOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
+      
+      new needShareButton('#needsharebutton-postbottom', pbOptions);
     
     
   </script>

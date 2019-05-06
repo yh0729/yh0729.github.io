@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://yh0729.github.io/categories/index.html</loc>
+    
+    <lastmod>2019-05-06T03:32:30.365Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://yh0729.github.io/tags/index.html</loc>
+    
+    <lastmod>2019-05-06T03:31:26.846Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://yh0729.github.io/2019/04/29/%E8%AE%B0%E5%BD%95vim%E5%91%BD%E4%BB%A4-1/</loc>
     
     <lastmod>2019-04-29T07:32:01.000Z</lastmod>
@@ -19,13 +33,6 @@
     <loc>https://yh0729.github.io/2019/04/26/%E6%84%9F%E6%82%9F/</loc>
     
     <lastmod>2019-04-26T03:45:38.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://yh0729.github.io/categories/index.html</loc>
-    
-    <lastmod>2019-04-26T03:44:26.000Z</lastmod>
     
   </url>
   
