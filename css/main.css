@@ -1255,6 +1255,69 @@ pre .javascript .function {
 .use-motion .menu-item {
   opacity: 0;
 }
+.github-corner :hover .octo-arm {
+  animation: octocat-wave 560ms ease-in-out;
+}
+.github-corner > svg {
+  fill: #222;
+  color: #fff;
+  position: absolute;
+  top: 0;
+  border: 0;
+  right: 0;
+}
+@media (max-width: 991px) {
+  .github-corner .github-corner:hover .octo-arm {
+    animation: none;
+  }
+  .github-corner .github-corner .octo-arm {
+    animation: octocat-wave 560ms ease-in-out;
+  }
+}
+@-moz-keyframes octocat-wave {
+  0%, 100% {
+    transform: rotate(0);
+  }
+  20%, 60% {
+    transform: rotate(-25deg);
+  }
+  40%, 80% {
+    transform: rotate(10deg);
+  }
+}
+@-webkit-keyframes octocat-wave {
+  0%, 100% {
+    transform: rotate(0);
+  }
+  20%, 60% {
+    transform: rotate(-25deg);
+  }
+  40%, 80% {
+    transform: rotate(10deg);
+  }
+}
+@-o-keyframes octocat-wave {
+  0%, 100% {
+    transform: rotate(0);
+  }
+  20%, 60% {
+    transform: rotate(-25deg);
+  }
+  40%, 80% {
+    transform: rotate(10deg);
+  }
+}
+@keyframes octocat-wave {
+  0%, 100% {
+    transform: rotate(0);
+  }
+  20%, 60% {
+    transform: rotate(-25deg);
+  }
+  40%, 80% {
+    transform: rotate(10deg);
+  }
+}
 .post-body {
   overflow-wrap: break-word;
   word-wrap: break-word;
@@ -1903,7 +1966,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #b1ffda;
+  background: #acff8c;
 }
 .feed-link,
 .chat {
@@ -2019,65 +2082,6 @@ pre .javascript .function {
 .site-state-item-name {
   font-size: 13px;
   color: inherit;
-}
-.post-toc-empty {
-  font-size: 14px;
-  color: #666;
-}
-.post-toc-wrap {
-  overflow: hidden;
-}
-.post-toc {
-  overflow: auto;
-}
-.post-toc ol {
-  margin: 0;
-  padding: 0 2px 5px 10px;
-  text-align: left;
-  list-style: none;
-  font-size: 14px;
-}
-.post-toc ol > ol {
-  padding-left: 0;
-}
-.post-toc ol a {
-  transition-duration: 0.2s;
-  transition-timing-function: ease-in-out;
-  transition-delay: 0s;
-  transition-property: all;
-  color: #999;
-  border-bottom-color: #555;
-}
-.post-toc ol a:hover {
-  color: #ccc;
-  border-bottom-color: #ccc;
-}
-.post-toc .nav-item {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  line-height: 1.8;
-}
-.post-toc .nav .nav-child {
-  display: none;
-}
-.post-toc .nav .active > .nav-child {
-  display: block;
-}
-.post-toc .nav .active-current > .nav-child {
-  display: block;
-}
-.post-toc .nav .active-current > .nav-child > .nav-item {
-  display: block;
-}
-.post-toc .nav .active > a {
-  color: #87daff;
-  border-bottom-color: #87daff;
-}
-.post-toc .nav .active-current > a {
-  color: #87daff;
-}
-.post-toc .nav .active-current > a:hover {
-  color: #87daff;
 }
 .footer {
   font-size: 14px;
@@ -2315,8 +2319,10 @@ ul.popular-posts .popular-posts-item .popular-posts-title {
   white-space: nowrap;
   vertical-align: middle;
   cursor: pointer;
-  background-color: #fff;
-  border: none;
+  background-color: #eee;
+  background-image: linear-gradient(#fcfcfc, #eee);
+  border: 1px solid #d5d5d5;
+  border-radius: 3px;
   user-select: none;
   outline: 0;
 }
@@ -2325,8 +2331,8 @@ ul.popular-posts .popular-posts-item .popular-posts-title {
   opacity: 0;
   padding: 2px 6px;
   position: absolute;
-  right: 0px;
-  height: 42px;
+  right: 4px;
+  top: 8px;
 }
 .highlight-wrap:hover .copy-btn,
 .highlight-wrap .copy-btn:focus {

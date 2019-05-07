@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>趁年轻别搞开发&#39;s blog</title>
+  
+  <subtitle>路漫漫其修远兮，吾将上下而求索</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://yh0729.github.io/"/>
+  <updated>2019-04-29T07:32:01.000Z</updated>
+  <id>https://yh0729.github.io/</id>
+  
+  <author>
+    <name>yh</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>记录vim命令</title>
+    <link href="https://yh0729.github.io/2019/04/29/%E8%AE%B0%E5%BD%95vim%E5%91%BD%E4%BB%A4-1/"/>
+    <id>https://yh0729.github.io/2019/04/29/记录vim命令-1/</id>
+    <published>2019-04-29T07:32:00.000Z</published>
+    <updated>2019-04-29T07:32:01.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="linux学习之常用命令，持续更新"><a href="#linux学习之常用命令，持续更新" class="headerlink" title="linux学习之常用命令，持续更新"></a>linux学习之常用命令，持续更新</h1><h3 id="1-vim常用命令"><a href="#1-vim常用命令" class="headerlink" title="1.vim常用命令"></a>1.vim常用命令</h3><table><thead><tr><th>命令</th><th>解释</th></tr></thead><tbody><tr><td>v</td><td>从光标当前位置开始，光标所经过的地方会被选中，再按一下v结束。</td></tr><tr><td>d</td><td>使用v选中后，删除</td></tr><tr><td>y</td><td>选中后，复制</td></tr><tr><td>p</td><td>粘贴</td></tr><tr><td>u</td><td>先esc，再按u撤销</td></tr><tr><td>:set nu</td><td>显示行号</td></tr><tr><td>i</td><td>插入</td></tr><tr><td>:$</td><td>跳转到文末</td></tr></tbody></table><hr><h3 id="2-多行操作"><a href="#2-多行操作" class="headerlink" title="2.多行操作"></a>2.多行操作</h3><p><strong>2.1 多行删除</strong><br>首先在命令模式下，输入“<code>：set nu</code>”显示行号； 2.通过行号确定你要删除的行； 3.命令输入“：32,65d”,回车键，32-   65行就被删除了，很快捷吧，如果无意中删除错了，可以使用‘<code>u</code>’键恢复（命令模式下）</p><hr><h3 id="3-操作文件"><a href="#3-操作文件" class="headerlink" title="3.操作文件"></a>3.操作文件</h3><p><strong>3.1  cd</strong><br><code>cd /home</code>      进入 ‘/ home’ 目录’<br><code>cd ..</code>             返回上一级目录<br><code>cd ../..</code>          返回上两级目录<br><code>cd -</code>               返回上次所在的目录<br><code>pwd</code>              显示工作路径</p><hr><p><strong>3.2 ls</strong><br><code>ls</code>                  查看目录中的文件<br><code>ls -a</code>              显示隐藏文件<br><code>ls -l</code>               显示文件和目录的详细资料</p><hr><p><strong>3.3 mkdir  &amp;&amp; cp &amp;&amp; rm</strong><br><code>mkdir  &#39;xx&#39;</code>    创建名为xx的目录<br><code>mkdir -p /tmp/dir1/dir2</code> 创建一个目录树<br><code>cp file1 file2</code> 复制一个文件<br><code>rm -r  dir1</code> 删除目录，不会删除里面文件<br><code>rm -rf dir1</code> 删除一个叫做 ‘dir1’ 的目录并同时删除其里面内容<br><code>rm -rf dir1 dir2</code> 同时删除两个目录及它们的内容 </p><hr><p><strong>3.3 find</strong><br><code>find / -name file1</code> 从 ‘/‘ 开始进入根文件系统搜索文件和目录，如果find ‘/tmp’ -name file1,则查找tmp下的file1文件<br><code>find / -xdev -name \*.sh</code> 搜索以sh结尾的文件，忽略光驱、捷盘等可移动设备 </p><hr><h3 id="4-操作进程-获取端口号"><a href="#4-操作进程-获取端口号" class="headerlink" title="4.操作进程-获取端口号"></a>4.操作进程-获取端口号</h3><p><code>pgrep tomcat</code> 快速直接查找进程id，查找tomcat的端口号<br><code>pidof  tomcat</code>  同上<br><code>killall  tomcat</code>  一般我们可以使用kill　-9 pid方式杀死一个进程，但是这样就需要先找到这个进程的进程id，实际上我们也可以直接根据名称杀死进程<br><code>pkill   tomcat</code>  同上<br><code>ps -p 21641 -o lstart,etime</code>  查看进程已运行时间：其中21641是你要查看进程的进程id。</p><hr><h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p>df -h 使用df命令可以快速查看各挂载路径磁盘占用情况。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">[root@izuf6dtic2d71rbvtn6126z tmp]<span class="comment"># df -h</span></span><br><span class="line">Filesystem      Size  Used Avail Use% Mounted on</span><br><span class="line">/dev/vda1        40G   12G   26G  31% /</span><br><span class="line">devtmpfs        905M     0  905M   0% /dev</span><br><span class="line">tmpfs           920M     0  920M   0% /dev/shm</span><br><span class="line">tmpfs           920M  944K  919M   1% /run</span><br><span class="line">tmpfs           920M     0  920M   0% /sys/fs/cgroup</span><br><span class="line">tmpfs           184M     0  184M   0% /run/user/0</span><br></pre></td></tr></table></figure></p><p>du -h –-max-depth=1 /home(或者-d 1)  当前目录以及各个子目录占用空间大小<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">[root@izuf6dtic2d71rbvtn6126z tmp]<span class="comment"># du -h –-max-depth=1 /home</span></span><br><span class="line">du: cannot access ‘–-max-depth=1’: No such file or directory</span><br><span class="line">4.0K/home/mycat/.mozilla/extensions</span><br><span class="line">4.0K/home/mycat/.mozilla/plugins</span><br><span class="line">12K/home/mycat/.mozilla</span><br><span class="line">24K/home/mycat</span><br><span class="line">36K/home/jenkins/.java/fonts/1.8.0_171</span><br><span class="line">40K/home/jenkins/.java/fonts</span><br><span class="line">44K/home/jenkins/.java</span><br><span class="line">52K/home/jenkins</span><br><span class="line">80K/home</span><br></pre></td></tr></table></figure></p><p>free -h 当前内存使用情况<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[root@izuf6dtic2d71rbvtn6126z tmp]<span class="comment"># free -h</span></span><br><span class="line">total        used        free      shared  buff/cache   available</span><br><span class="line">Mem:           1.8G        886M         90M        1.0M        861M        746M</span><br><span class="line">Swap:            0B          0B          0B</span><br></pre></td></tr></table></figure></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;linux学习之常用命令，持续更新&quot;&gt;&lt;a href=&quot;#linux学习之常用命令，持续更新&quot; class=&quot;headerlink&quot; title=&quot;linux学习之常用命令，持续更新&quot;&gt;&lt;/a&gt;linux学习之常用命令，持续更新&lt;/h1&gt;&lt;h3 id=&quot;1-vim
+      
+    
+    </summary>
+    
+      <category term="linux" scheme="https://yh0729.github.io/categories/linux/"/>
+    
+    
+      <category term="vim" scheme="https://yh0729.github.io/tags/vim/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>leetcode练习题</title>
+    <link href="https://yh0729.github.io/2019/04/26/leetcode-1/"/>
+    <id>https://yh0729.github.io/2019/04/26/leetcode-1/</id>
+    <published>2019-04-26T03:56:00.000Z</published>
+    <updated>2019-04-26T03:56:41.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="leetcode"><a href="#leetcode" class="headerlink" title="leetcode"></a>leetcode</h1><p><strong>给定一个长度为 n 的整数数组，你的任务是判断在最多改变 1 个元素的情况下，该数组能否变成一个非递减数列。我们是这样定义一个非递减数列的： 对于数组中所有的 i (1 &lt;= i &lt; n)，满足 array[i] &lt;= array[i + 1]</strong></p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">    * 判断改变一个值是否能变成递增</span></span><br><span class="line"><span class="comment">    *</span></span><br><span class="line"><span class="comment">    * <span class="doctag">@param</span> arr 3 2 1, 1 2 1</span></span><br><span class="line"><span class="comment">    * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">   <span class="function"><span class="keyword">private</span> Boolean <span class="title">changeOneToUp</span><span class="params">(<span class="keyword">int</span> arr[])</span> </span>&#123;</span><br><span class="line">       Boolean flag = <span class="keyword">true</span>;</span><br><span class="line">       <span class="keyword">if</span> (arr.length &lt; <span class="number">3</span>) &#123;</span><br><span class="line">           <span class="keyword">return</span> flag;</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="comment">//3 5 4 4 6</span></span><br><span class="line">       <span class="keyword">int</span> count = <span class="number">0</span>;</span><br><span class="line">       <span class="keyword">int</span> left, right;</span><br><span class="line">       <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; arr.length - <span class="number">1</span>; i++) &#123;</span><br><span class="line">           <span class="keyword">if</span> (i == <span class="number">0</span>) &#123;</span><br><span class="line">               <span class="keyword">if</span> (arr[<span class="number">0</span>] &gt; arr[<span class="number">1</span>]) &#123;</span><br><span class="line">                   arr[<span class="number">0</span>] = arr[<span class="number">1</span>];</span><br><span class="line">                   count++;</span><br><span class="line">               &#125;</span><br><span class="line">               <span class="keyword">continue</span>;</span><br><span class="line">           &#125;</span><br><span class="line">           left = arr[i - <span class="number">1</span>];</span><br><span class="line">           right = arr[i + <span class="number">1</span>];</span><br><span class="line">           <span class="keyword">if</span> (arr[i] &gt; right) &#123;</span><br><span class="line">               <span class="keyword">if</span> (left &gt; right) &#123;</span><br><span class="line">                   arr[i + <span class="number">1</span>] = arr[i];</span><br><span class="line">               &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                   arr[i] = left;</span><br><span class="line">               &#125;</span><br><span class="line">               count++;</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="keyword">if</span> (count &gt; <span class="number">1</span>) &#123;</span><br><span class="line">           flag = <span class="keyword">false</span>;</span><br><span class="line">       &#125;</span><br><span class="line"></span><br><span class="line">       <span class="keyword">return</span> flag;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;leetcode&quot;&gt;&lt;a href=&quot;#leetcode&quot; class=&quot;headerlink&quot; title=&quot;leetcode&quot;&gt;&lt;/a&gt;leetcode&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;给定一个长度为 n 的整数数组，你的任务是判断在最多改变 1 个元素的情况下
+      
+    
+    </summary>
+    
+      <category term="code" scheme="https://yh0729.github.io/categories/code/"/>
+    
+    
+      <category term="code" scheme="https://yh0729.github.io/tags/code/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>感悟</title>
+    <link href="https://yh0729.github.io/2019/04/26/%E6%84%9F%E6%82%9F/"/>
+    <id>https://yh0729.github.io/2019/04/26/感悟/</id>
+    <published>2019-04-26T03:45:00.000Z</published>
+    <updated>2019-04-26T03:45:38.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>生活不仅有眼前的苟且，还有未来的打击！</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;生活不仅有眼前的苟且，还有未来的打击！&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+      <category term="生活" scheme="https://yh0729.github.io/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+    
+      <category term="苟且" scheme="https://yh0729.github.io/tags/%E8%8B%9F%E4%B8%94/"/>
+    
+  </entry>
+  
+</feed>
