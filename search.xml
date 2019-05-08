@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[leetcode练习题二：买卖股票的最佳时机]]></title>
+    <url>%2F2019%2F05%2F08%2Fleetcode%E7%BB%83%E4%B9%A0%E9%A2%98%E4%BA%8C%EF%BC%9A%E4%B9%B0%E5%8D%96%E8%82%A1%E7%A5%A8%E7%9A%84%E6%9C%80%E4%BD%B3%E6%97%B6%E6%9C%BA%2F</url>
+    <content type="text"><![CDATA[给定一个数组，它的第 i 个元素是一支给定股票第 i 天的价格。如果你最多只允许完成一笔交易（即买入和卖出一支股票），设计一个算法来计算你所能获取的最大利润。注意你不能在买入股票前卖出股票。 示例 1: 输入: [7,1,5,3,6,4]输出: 5解释: 在第 2 天（股票价格 = 1）的时候买入，在第 5 天（股票价格 = 6）的时候卖出，最大利润 = 6-1 = 5 。注意利润不能是 7-1 = 6, 因为卖出价格需要大于买入价格。 示例 2: 输入: [7,6,4,3,1]输出: 0解释: 在这种情况下, 没有交易完成, 所以最大利润为 0。 1234567891011121314//暴力解法public int maxProfit(int[] prices) &#123; int maxProfit = 0; for (int i = 0; i &lt; prices.length - 1; i++) &#123; int x = prices[i]; //拿到每一个数，获取后面的数 算出最大差 for (int j = i + 1; j &lt;= prices.length - 1; j++) &#123; if (prices[j] - x &gt; maxProfit) &#123; maxProfit = prices[j] - x; &#125; &#125; &#125; return maxProfit;&#125; 1234567891011121314151617public int maxProfit2(int[] prices) &#123; int maxprofit = 0; if (prices.length == 0) &#123; return maxprofit; &#125; int minprice = prices[0]; for (int i = 1; i &lt; prices.length; i++) &#123; //小于最小值则赋值，否则获取差 if (prices[i] &lt; minprice) &#123; minprice = prices[i]; &#125; else if (prices[i] - minprice &gt; maxprofit) &#123; //判断是否是最大差值 maxprofit = prices[i] - minprice; &#125; &#125; return maxprofit;&#125;]]></content>
+      <categories>
+        <category>code</category>
+      </categories>
+      <tags>
+        <tag>leetcode</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[linux学习之常用命令，持续更新]]></title>
     <url>%2F2019%2F04%2F29%2F%E8%AE%B0%E5%BD%95vim%E5%91%BD%E4%BB%A4-1%2F</url>
     <content type="text"><![CDATA[1.vim常用命令 命令 解释 v 从光标当前位置开始，光标所经过的地方会被选中，再按一下v结束。 d 使用v选中后，删除 y 选中后，复制 p 粘贴 u 先esc，再按u撤销 :set nu 显示行号 i 插入 :$ 跳转到文末 2.多行操作2.1 多行删除 1.首先在命令模式下，输入“：set nu”显示行号； 2.通过行号确定你要删除的行； 3.命令输入“：32,65d”,回车键，32- 65行就被删除了，很快捷吧，如果无意中删除错了，可以使用‘u’键恢复（命令模式下） 2.2 多行注释 1.首先按esc进入命令行模式下，按下Ctrl + v, 进入列模式； 2.选定要取消注释的多行； 3.按下“x”或者“d”。（注意：如果是“//”注释，那需要执行两次该操作，如果是“#”注释，一次即可） 3.操作文件3.1 cdcd /home 进入 ‘/ home’ 目录’cd .. 返回上一级目录cd ../.. 返回上两级目录cd - 返回上次所在的目录pwd 显示工作路径 3.2 lsls 查看目录中的文件ls -a 显示隐藏文件ls -l 显示文件和目录的详细资料 3.3 mkdir &amp;&amp; cp &amp;&amp; rmmkdir &#39;xx&#39; 创建名为xx的目录mkdir -p /tmp/dir1/dir2 创建一个目录树cp file1 file2 复制一个文件rm -r dir1 删除目录，不会删除里面文件rm -rf dir1 删除一个叫做 ‘dir1’ 的目录并同时删除其里面内容rm -rf dir1 dir2 同时删除两个目录及它们的内容 3.3 findfind / -name file1 从 ‘/‘ 开始进入根文件系统搜索文件和目录，如果find ‘/tmp’ -name file1,则查找tmp下的file1文件find / -xdev -name \*.sh 搜索以sh结尾的文件，忽略光驱、捷盘等可移动设备 4.操作进程-获取端口号pgrep tomcat 快速直接查找进程id，查找tomcat的端口号pidof tomcat 同上killall tomcat 一般我们可以使用kill -9 pid方式杀死一个进程，但是这样就需要先找到这个进程的进程id，实际上我们也可以直接根据名称杀死进程pkill tomcat 同上ps -p 21641 -o lstart,etime 查看进程已运行时间：其中21641是你要查看进程的进程id。 其他df -h 使用df命令可以快速查看各挂载路径磁盘占用情况。12345678[root@izuf6dtic2d71rbvtn6126z tmp]# df -hFilesystem Size Used Avail Use% Mounted on/dev/vda1 40G 12G 26G 31% /devtmpfs 905M 0 905M 0% /devtmpfs 920M 0 920M 0% /dev/shmtmpfs 920M 944K 919M 1% /runtmpfs 920M 0 920M 0% /sys/fs/cgrouptmpfs 184M 0 184M 0% /run/user/0 du -h –-max-depth=1 /home(或者-d 1) 当前目录以及各个子目录占用空间大小1234567891011[root@izuf6dtic2d71rbvtn6126z tmp]# du -h –-max-depth=1 /homedu: cannot access ‘–-max-depth=1’: No such file or directory4.0K /home/mycat/.mozilla/extensions4.0K /home/mycat/.mozilla/plugins12K /home/mycat/.mozilla24K /home/mycat36K /home/jenkins/.java/fonts/1.8.0_17140K /home/jenkins/.java/fonts44K /home/jenkins/.java52K /home/jenkins80K /home free -h 当前内存使用情况1234[root@izuf6dtic2d71rbvtn6126z tmp]# free -htotal used free shared buff/cache availableMem: 1.8G 886M 90M 1.0M 861M 746MSwap: 0B 0B 0B]]></content>
@@ -12,18 +23,18 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[leetcode练习题]]></title>
+    <title><![CDATA[leetcode练习题一：判断能否变成递减数列]]></title>
     <url>%2F2019%2F04%2F26%2Fleetcode-1%2F</url>
     <content type="text"><![CDATA[leetcode给定一个长度为 n 的整数数组，你的任务是判断在最多改变 1 个元素的情况下，该数组能否变成一个非递减数列。我们是这样定义一个非递减数列的： 对于数组中所有的 i (1 &lt;= i &lt; n)，满足 array[i] &lt;= array[i + 1] 123456789101112131415161718192021222324252627282930313233343536373839/** * 判断改变一个值是否能变成递增 * * @param arr 3 2 1, 1 2 1 * @return */ private Boolean changeOneToUp(int arr[]) &#123; Boolean flag = true; if (arr.length &lt; 3) &#123; return flag; &#125; //3 5 4 4 6 int count = 0; int left, right; for (int i = 0; i &lt; arr.length - 1; i++) &#123; if (i == 0) &#123; if (arr[0] &gt; arr[1]) &#123; arr[0] = arr[1]; count++; &#125; continue; &#125; left = arr[i - 1]; right = arr[i + 1]; if (arr[i] &gt; right) &#123; if (left &gt; right) &#123; arr[i + 1] = arr[i]; &#125; else &#123; arr[i] = left; &#125; count++; &#125; &#125; if (count &gt; 1) &#123; flag = false; &#125; return flag; &#125;]]></content>
       <categories>
         <category>code</category>
       </categories>
       <tags>
-        <tag>code</tag>
+        <tag>leetcode</tag>
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[感悟]]></title>
+    <title><![CDATA[第一篇blog：感悟]]></title>
     <url>%2F2019%2F04%2F26%2F%E6%84%9F%E6%82%9F%2F</url>
     <content type="text"><![CDATA[生活不仅有眼前的苟且，还有未来的打击！]]></content>
       <categories>

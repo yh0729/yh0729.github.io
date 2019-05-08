@@ -120,16 +120,17 @@ daovoice('update');
 
 
 
-  <meta name="description" content="Time will bring a surprise, if you believe">
+  <meta name="description" content="AV.initialize(&quot;leancloud_appid&quot;, &quot;leancloud_appkey&quot;);    var time=0   var title=&quot;&quot;   var url=&quot;&quot;   var query = new AV.Query(&apos;Counter&apos;);   query.notEqualTo(&apos;id&apos;,0);   query.descending(&apos;time&apos;);   query">
 <meta property="og:type" content="website">
-<meta property="og:title" content="趁年轻别搞开发&#39;s blog">
-<meta property="og:url" content="https://yh0729.github.io/tags/苟且/index.html">
+<meta property="og:title" content="top">
+<meta property="og:url" content="https://yh0729.github.io/top/index.html">
 <meta property="og:site_name" content="趁年轻别搞开发&#39;s blog">
-<meta property="og:description" content="Time will bring a surprise, if you believe">
+<meta property="og:description" content="AV.initialize(&quot;leancloud_appid&quot;, &quot;leancloud_appkey&quot;);    var time=0   var title=&quot;&quot;   var url=&quot;&quot;   var query = new AV.Query(&apos;Counter&apos;);   query.notEqualTo(&apos;id&apos;,0);   query.descending(&apos;time&apos;);   query">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-05-08T08:08:57.930Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="趁年轻别搞开发&#39;s blog">
-<meta name="twitter:description" content="Time will bring a surprise, if you believe">
+<meta name="twitter:title" content="top">
+<meta name="twitter:description" content="AV.initialize(&quot;leancloud_appid&quot;, &quot;leancloud_appkey&quot;);    var time=0   var title=&quot;&quot;   var url=&quot;&quot;   var query = new AV.Query(&apos;Counter&apos;);   query.notEqualTo(&apos;id&apos;,0);   query.descending(&apos;time&apos;);   query">
 
 
 
@@ -139,7 +140,7 @@ daovoice('update');
 
   
   
-  <link rel="canonical" href="https://yh0729.github.io/tags/苟且/">
+  <link rel="canonical" href="https://yh0729.github.io/top/">
 
 
 
@@ -149,7 +150,7 @@ daovoice('update');
   };
 </script>
 
-  <title>标签: 苟且 | 趁年轻别搞开发's blog</title>
+  <title>top | 趁年轻别搞开发's blog</title>
   
 
 
@@ -197,7 +198,7 @@ daovoice('update');
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -262,7 +263,7 @@ daovoice('update');
         
         
           
-          <li class="menu-item menu-item-tags menu-item-active">
+          <li class="menu-item menu-item-tags">
 
     
     
@@ -313,7 +314,7 @@ daovoice('update');
         
         
           
-          <li class="menu-item menu-item-top">
+          <li class="menu-item menu-item-top menu-item-active">
 
     
     
@@ -437,57 +438,84 @@ daovoice('update');
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block tag">
+  <div id="posts" class="posts-expand">
+    
+    
+    
+    <div class="post-block page">
+      <header class="post-header">
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>苟且<small>标签</small>
-        </h1>
-      </div>
+<h1 class="post-title" itemprop="name headline">top
+
+</h1>
+
+<div class="post-meta">
+  
+  
+
+
+
+</div>
+
+</header>
 
       
+      
+      
+      <div class="post-body">
         
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
         
-          <a class="post-title-link" href="/2019/04/26/感悟/" itemprop="url">
-            
-              <span itemprop="name">第一篇blog：感悟</span>
-            
-          </a>
+          <p><div id="top"></div></p>
+<script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+<script>AV.initialize("leancloud_appid", "leancloud_appkey");</script>
+<script type="text/javascript">
+  var time=0
+  var title=""
+  var url=""
+  var query = new AV.Query('Counter');
+  query.notEqualTo('id',0);
+  query.descending('time');
+  query.limit(1000);
+  query.find().then(function (todo) {
+    for (var i=0;i<1000;i++){
+      var result=todo[i].attributes;
+      time=result.time;
+      title=result.title;
+      url=result.url;
+      // var content="<a href='"+"https://hoxis.github.io"+url+"'>"+title+"</a>"+"<br>"+"<font color='#fff'>"+"阅读次数："+time+"</font>"+"<br><br>";
+      var content="<p>"+"<font color='#1C1C1C'>"+"【文章热度:"+time+"℃】"+"</font>"+"<a href='"+"https://hoxis.github.io"+url+"'>"+title+"</a>"+"</p>";
+      document.getElementById("top").innerHTML+=content
+    }
+  }, function (error) {
+    console.log("error");
+  });
+</script>
         
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-04-26T11:45:00+08:00" content="2019-04-26">
-          04-26
-        </time>
       </div>
-
-    </header>
-  </article>
-
-
+      
+      
       
     </div>
+    
 
+
+
+    
+    
+    
   </div>
-  
-  
-  
-
-  
-
 
 
           </div>
           
+
+  
+    <div class="comments" id="comments">
+    </div>
+
+  
+
+
 
         </div>
         
@@ -830,6 +858,10 @@ setInterval("createtime()",250);
 
 
   
+  <script src="/js/scrollspy.js?v=7.1.0"></script>
+<script src="/js/post-details.js?v=7.1.0"></script>
+
+
 
   
 
@@ -883,6 +915,8 @@ setInterval("createtime()",250);
 
 
 
+
+  
 
 
   
