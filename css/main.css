@@ -1966,7 +1966,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #b1ff00;
+  background: #8304e7;
 }
 .feed-link,
 .chat {
@@ -2724,4 +2724,15 @@ embed {
 }
 .post-toc ol {
   font-size: 13px;
+}
+文章摘要配图,
+图片外部的容器方框，限制图片大小,
+.out-img-topic {
+  display: block;
+  max-height: 500px;
+  margin-bottom: 24px;
+  overflow: hidden;
+}
+img.img-topic {
+  width: 100%;
 }
