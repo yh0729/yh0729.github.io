@@ -128,7 +128,7 @@ daovoice('update');
 <meta property="og:site_name" content="趁年轻别搞开发&#39;s blog">
 <meta property="og:description" content="罗马数字包含以下七种字符: I， V， X， L，C，D 和 M。    字符 数值     I 1   V 5   X 10   L 50   C 100   D 500   M 1000    例如， 罗马数字 2 写做 II ，即为两个并列的 1。12 写做 XII ，即为 X + II 。 27 写做  XXVII, 即为 XX + V + II 。 通常情况下，罗马数字中小的数字在大的数">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-13T05:35:45.901Z">
+<meta property="og:updated_time" content="2019-05-14T06:49:21.003Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="leetcode练习题三：罗马数字转阿拉伯数字">
 <meta name="twitter:description" content="罗马数字包含以下七种字符: I， V， X， L，C，D 和 M。    字符 数值     I 1   V 5   X 10   L 50   C 100   D 500   M 1000    例如， 罗马数字 2 写做 II ，即为两个并列的 1。12 写做 XII ，即为 X + II 。 27 写做  XXVII, 即为 XX + V + II 。 通常情况下，罗马数字中小的数字在大的数">
@@ -527,7 +527,7 @@ daovoice('update');
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">5.2k</span>
+                <span title="本文字数">8k</span>
               
 
               
@@ -541,7 +541,7 @@ daovoice('update');
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">5 分钟</span>
+                <span title="阅读时长">7 分钟</span>
               
             </div>
           
@@ -626,7 +626,8 @@ daovoice('update');
 <blockquote>
 <p>示例 5:输入: “MCMXCIV”<br>输出: 1994<br>解释: M = 1000, CM = 900, XC = 90, IV = 4.</p>
 </blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">romanToInt</span><span class="params">(String s)</span> </span>&#123;</span><br><span class="line">    <span class="comment">//储存所有罗马数字</span></span><br><span class="line">    Map&lt;String, Integer&gt; map = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">    map.put(<span class="string">"I"</span>, <span class="number">1</span>);</span><br><span class="line">    map.put(<span class="string">"V"</span>, <span class="number">5</span>);</span><br><span class="line">    map.put(<span class="string">"X"</span>, <span class="number">10</span>);</span><br><span class="line">    map.put(<span class="string">"L"</span>, <span class="number">50</span>);</span><br><span class="line">    map.put(<span class="string">"C"</span>, <span class="number">100</span>);</span><br><span class="line">    map.put(<span class="string">"D"</span>, <span class="number">500</span>);</span><br><span class="line">    map.put(<span class="string">"M"</span>, <span class="number">1000</span>);</span><br><span class="line">    <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; s.length(); i++) &#123;</span><br><span class="line">        String s1 = Character.toString(s.charAt(i));</span><br><span class="line">        Integer cur = map.get(s1);</span><br><span class="line">        <span class="comment">//判断这个字符是否是最后一个，避免空指针</span></span><br><span class="line">        <span class="keyword">if</span> (s.length() - <span class="number">1</span> == i) &#123;</span><br><span class="line">            sum += cur;</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        Integer next = map.get(Character.toString(s.charAt(i + <span class="number">1</span>)));</span><br><span class="line">            <span class="comment">//当前值如果小于下一个值，则获取这两个罗马数字联合的值</span></span><br><span class="line">        <span class="keyword">if</span> (cur &lt; next) &#123;</span><br><span class="line">            sum += next - cur;</span><br><span class="line">             <span class="comment">//这里由于是计算两个罗马符号的值，所以下一次循环跳过</span></span><br><span class="line">            i++;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="comment">//正常情况 则 加上当前值</span></span><br><span class="line">            sum += cur;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> sum;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="1-罗马数字转阿拉伯数字"><a href="#1-罗马数字转阿拉伯数字" class="headerlink" title="1.罗马数字转阿拉伯数字"></a>1.罗马数字转阿拉伯数字</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">romanToInt</span><span class="params">(String s)</span> </span>&#123;</span><br><span class="line">    <span class="comment">//储存所有罗马数字</span></span><br><span class="line">    Map&lt;String, Integer&gt; map = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">    map.put(<span class="string">"I"</span>, <span class="number">1</span>);</span><br><span class="line">    map.put(<span class="string">"V"</span>, <span class="number">5</span>);</span><br><span class="line">    map.put(<span class="string">"X"</span>, <span class="number">10</span>);</span><br><span class="line">    map.put(<span class="string">"L"</span>, <span class="number">50</span>);</span><br><span class="line">    map.put(<span class="string">"C"</span>, <span class="number">100</span>);</span><br><span class="line">    map.put(<span class="string">"D"</span>, <span class="number">500</span>);</span><br><span class="line">    map.put(<span class="string">"M"</span>, <span class="number">1000</span>);</span><br><span class="line">    <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; s.length(); i++) &#123;</span><br><span class="line">        String s1 = Character.toString(s.charAt(i));</span><br><span class="line">        Integer cur = map.get(s1);</span><br><span class="line">        <span class="comment">//判断这个字符是否是最后一个，避免空指针</span></span><br><span class="line">        <span class="keyword">if</span> (s.length() - <span class="number">1</span> == i) &#123;</span><br><span class="line">            sum += cur;</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        Integer next = map.get(Character.toString(s.charAt(i + <span class="number">1</span>)));</span><br><span class="line">            <span class="comment">//当前值如果小于下一个值，则获取这两个罗马数字联合的值</span></span><br><span class="line">        <span class="keyword">if</span> (cur &lt; next) &#123;</span><br><span class="line">            sum += next - cur;</span><br><span class="line">             <span class="comment">//这里由于是计算两个罗马符号的值，所以下一次循环跳过</span></span><br><span class="line">            i++;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="comment">//正常情况 则 加上当前值</span></span><br><span class="line">            sum += cur;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> sum;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="2-阿拉伯数字转罗马数字"><a href="#2-阿拉伯数字转罗马数字" class="headerlink" title="2.阿拉伯数字转罗马数字"></a>2.阿拉伯数字转罗马数字</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//阿拉伯数字转罗马数字</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">intToRoman</span><span class="params">(<span class="keyword">int</span> num)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> ints[] = &#123;<span class="number">1000</span>, <span class="number">900</span>, <span class="number">500</span>, <span class="number">400</span>, <span class="number">100</span>, <span class="number">90</span>, <span class="number">50</span>, <span class="number">40</span>, <span class="number">10</span>, <span class="number">9</span>, <span class="number">5</span>, <span class="number">4</span>, <span class="number">1</span>&#125;;</span><br><span class="line">    String roman[] = &#123;<span class="string">"M"</span>, <span class="string">"CM"</span>, <span class="string">"D"</span>, <span class="string">"CD"</span>, <span class="string">"C"</span>, <span class="string">"XC"</span>, <span class="string">"L"</span>, <span class="string">"XL"</span>, <span class="string">"X"</span>, <span class="string">"IX"</span>, <span class="string">"V"</span>, <span class="string">"IV"</span>, <span class="string">"I"</span>&#125;;</span><br><span class="line">    StringBuilder sb = <span class="keyword">new</span> StringBuilder();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; ints.length; i++) &#123;</span><br><span class="line">        <span class="keyword">while</span> (ints[i] &lt;= num) &#123;</span><br><span class="line">            sb.append(roman[i]);</span><br><span class="line">            num -= ints[i];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> sb.toString();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -642,6 +643,17 @@ daovoice('update');
       
       
       <div class="popular-posts-title"><a href="/2019/04/26/leetcode-1/" rel="bookmark">leetcode练习题一：判断能否变成递减数列</a></div>
+      
+    </li>
+  
+    <li class="popular-posts-item">
+      
+        <div class="popular-posts-date">2019-05-14</div>
+      
+      
+        <div class="popular-posts-img"><img src="https://aliyun-lc-upload.oss-cn-hangzhou.aliyuncs.com/aliyun-lc-upload/uploads/2018/07/25/question_11.jpg"></div>
+      
+      <div class="popular-posts-title"><a href="/2019/05/14/leetcode练习题七：盛最多水的容器/" rel="bookmark">leetcode练习题七：盛最多水的容器</a></div>
       
     </li>
   
@@ -847,8 +859,17 @@ daovoice('update');
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -865,7 +886,7 @@ daovoice('update');
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">7</span>
+                    <span class="site-state-item-count">9</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -987,6 +1008,23 @@ daovoice('update');
         </div>
       </div>
 
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-罗马数字转阿拉伯数字"><span class="nav-number">1.</span> <span class="nav-text">1.罗马数字转阿拉伯数字</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-阿拉伯数字转罗马数字"><span class="nav-number">2.</span> <span class="nav-text">2.阿拉伯数字转罗马数字</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
       
 
       
