@@ -68,7 +68,9 @@ daovoice('update');
 
 
 
-<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/v4-shims.css">
 
 <link rel="stylesheet" href="/css/main.css?v=7.1.0">
 
@@ -98,7 +100,7 @@ daovoice('update');
     version: '7.1.0',
     sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
     back2top: true,
-    back2top_sidebar: true,
+    back2top_sidebar: false,
     fancybox: true,
     fastclick: false,
     lazyload: true,
@@ -748,7 +750,7 @@ daovoice('update');
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">9</span>
+                    <span class="site-state-item-count">11</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -771,7 +773,11 @@ daovoice('update');
                     
                       
                     
-                    <span class="site-state-item-count">3</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">5</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -794,7 +800,13 @@ daovoice('update');
                     
                       
                     
-                    <span class="site-state-item-count">3</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">6</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -873,13 +885,6 @@ daovoice('update');
       
 
       
-        <div class="back-to-top">
-          <i class="fa fa-arrow-up"></i>
-          
-            <span id="scrollpercent"><span>0</span>%</span>
-          
-        </div>
-      
 
     </div>
   </aside>
@@ -916,11 +921,18 @@ daovoice('update');
 
 
 
-<div class="BbeiAn-info">
-鄂ICP备 -
-<a target="_blank" href="http://www.beian.miit.gov.cn">19012600号</a>
+  <div class="BbeiAn-info" style="text-decoration:none;">
+      鄂ICP备 -
+      <a href="http://www.miitbeian.gov.cn/">19012600号</a>&nbsp;&nbsp;
+     <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=42011602000644">鄂公网安备 42011602000644号</a>  
+  </div>
 
-</div>
+
+
+
+
+
+
 
 
 <script>
@@ -938,6 +950,7 @@ daovoice('update');
         document.getElementById("times").innerHTML = hnum + " 时 " + mnum + " 分 " + snum + " 秒"; 
     } 
 setInterval("createtime()",250);
+console.log("Hello World!");
 </script>
 
 
@@ -980,6 +993,13 @@ setInterval("createtime()",250);
       </div>
     </footer>
 
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
     
 
     
@@ -1531,8 +1551,8 @@ setInterval("createtime()",250);
       ta.readOnly = false;
       var result = document.execCommand('copy');
       
-        if (result) $(this).text('复制成功');
-        else $(this).text('复制失败');
+        if (result) $(this).text('复制成功鸭:)');
+        else $(this).text('复制失败:(');
       
       ta.blur(); // For iOS
       $(this).blur();
