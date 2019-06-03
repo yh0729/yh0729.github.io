@@ -1971,7 +1971,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #d9ed79;
+  background: #4affff;
 }
 .feed-link,
 .chat {
@@ -2764,6 +2764,14 @@ embed {
 .code ::selection {
   background: #2593a6;
   color: #fff;
+}
+.hitokoto {
+  margin-top: 10px;
+  font-size: 12px;
+  color: #999;
+}
+.hitokoto {
+  margin: 10px 0 20px;
 }
 .gt-container .gt-comment-content .highlight pre,
 .markdown-body pre {
