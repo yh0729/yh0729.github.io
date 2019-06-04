@@ -122,18 +122,20 @@ daovoice('update');
 
 
 
-  <meta name="description" content="1.vim常用命令   命令 解释     v 从光标当前位置开始，光标所经过的地方会被选中，再按一下v结束。   d 使用v选中后，删除   y 选中后，复制   p 粘贴   u 先esc，再按u撤销   :set nu 显示行号   i 插入   :$ 跳转到文末     2.多行操作2.1 多行删除 1.首先在命令模式下，输入“：set nu”显示行号； 2.通过行号确定你要删除的行； 3">
-<meta name="keywords" content="linux">
+  <meta name="description" content="给定n个非负整数a1，a2，…，an，每个数代表坐标中的一个点(i,ai) 。在坐标内画n条垂直线，垂直线i的两个端点分别为(i,ai) 和 (i, 0)。找出其中的两条线，使得它们与x轴共同构成的容器可以容纳最多的水。 说明：你不能倾斜容器，且n的值至少为 2。  图中垂直线代表输入数组 [1,8,6,2,5,4,8,3,7]。在此情况下，容器能够容纳水（表示为蓝色部分）的最大值为49。  示例">
+<meta name="keywords" content="leetcode">
 <meta property="og:type" content="article">
-<meta property="og:title" content="linux学习之常用命令，持续更新">
-<meta property="og:url" content="https:www.yh0729.cn/2019/04/29/linux学习之常用命令，持续更新/index.html">
+<meta property="og:title" content="leetcode练习题七：盛最多水的容器">
+<meta property="og:url" content="https:www.yh0729.cn/20190514/leetcode练习题七：盛最多水的容器.html">
 <meta property="og:site_name" content="趁年轻别搞开发&#39;s blog">
-<meta property="og:description" content="1.vim常用命令   命令 解释     v 从光标当前位置开始，光标所经过的地方会被选中，再按一下v结束。   d 使用v选中后，删除   y 选中后，复制   p 粘贴   u 先esc，再按u撤销   :set nu 显示行号   i 插入   :$ 跳转到文末     2.多行操作2.1 多行删除 1.首先在命令模式下，输入“：set nu”显示行号； 2.通过行号确定你要删除的行； 3">
+<meta property="og:description" content="给定n个非负整数a1，a2，…，an，每个数代表坐标中的一个点(i,ai) 。在坐标内画n条垂直线，垂直线i的两个端点分别为(i,ai) 和 (i, 0)。找出其中的两条线，使得它们与x轴共同构成的容器可以容纳最多的水。 说明：你不能倾斜容器，且n的值至少为 2。  图中垂直线代表输入数组 [1,8,6,2,5,4,8,3,7]。在此情况下，容器能够容纳水（表示为蓝色部分）的最大值为49。  示例">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-04-29T07:32:01.000Z">
+<meta property="og:image" content="https://aliyun-lc-upload.oss-cn-hangzhou.aliyuncs.com/aliyun-lc-upload/uploads/2018/07/25/question_11.jpg">
+<meta property="og:updated_time" content="2019-05-14T09:25:55.646Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="linux学习之常用命令，持续更新">
-<meta name="twitter:description" content="1.vim常用命令   命令 解释     v 从光标当前位置开始，光标所经过的地方会被选中，再按一下v结束。   d 使用v选中后，删除   y 选中后，复制   p 粘贴   u 先esc，再按u撤销   :set nu 显示行号   i 插入   :$ 跳转到文末     2.多行操作2.1 多行删除 1.首先在命令模式下，输入“：set nu”显示行号； 2.通过行号确定你要删除的行； 3">
+<meta name="twitter:title" content="leetcode练习题七：盛最多水的容器">
+<meta name="twitter:description" content="给定n个非负整数a1，a2，…，an，每个数代表坐标中的一个点(i,ai) 。在坐标内画n条垂直线，垂直线i的两个端点分别为(i,ai) 和 (i, 0)。找出其中的两条线，使得它们与x轴共同构成的容器可以容纳最多的水。 说明：你不能倾斜容器，且n的值至少为 2。  图中垂直线代表输入数组 [1,8,6,2,5,4,8,3,7]。在此情况下，容器能够容纳水（表示为蓝色部分）的最大值为49。  示例">
+<meta name="twitter:image" content="https://aliyun-lc-upload.oss-cn-hangzhou.aliyuncs.com/aliyun-lc-upload/uploads/2018/07/25/question_11.jpg">
 
 
 
@@ -143,7 +145,7 @@ daovoice('update');
 
   
   
-  <link rel="canonical" href="https:www.yh0729.cn/2019/04/29/linux学习之常用命令，持续更新/">
+  <link rel="canonical" href="https:www.yh0729.cn/20190514/leetcode练习题七：盛最多水的容器">
 
 
 
@@ -153,7 +155,7 @@ daovoice('update');
   };
 </script>
 
-  <title>linux学习之常用命令，持续更新 | 趁年轻别搞开发's blog</title>
+  <title>leetcode练习题七：盛最多水的容器 | 趁年轻别搞开发's blog</title>
   
 
 
@@ -388,7 +390,7 @@ daovoice('update');
 
   
 
-  <a href="https://github.com/yh0729" class="github-corner" title="Follow me on GitHub,thanks!" aria-label="Follow me on GitHub,thanks!" rel="noopener" target="_blank"><svg width="80" height="80" viewbox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a>
+  <a href="https://github.com/yh0729" class="github-corner" title="Follow me on GitHub,thanks!" aria-label="Follow me on GitHub,thanks!" rel="external nofollow noopener noreferrer" target="_blank"><svg width="80" height="80" viewbox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a>
 
 
 
@@ -415,7 +417,7 @@ daovoice('update');
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https:www.yh0729.cn/2019/04/29/linux学习之常用命令，持续更新/">
+    <link itemprop="mainEntityOfPage" href="https:www.yh0729.cn/20190514/leetcode练习题七：盛最多水的容器.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="yh">
@@ -432,7 +434,7 @@ daovoice('update');
 
         
         
-          <h2 class="post-title" itemprop="name headline">linux学习之常用命令，持续更新
+          <h2 class="post-title" itemprop="name headline">leetcode练习题七：盛最多水的容器
 
               
             
@@ -458,7 +460,7 @@ daovoice('update');
                 
               
 
-              <time title="创建时间：2019-04-29 15:32:00" itemprop="dateCreated datePublished" datetime="2019-04-29T15:32:00+08:00">2019-04-29</time>
+              <time title="创建时间：2019-05-14 17:14:00" itemprop="dateCreated datePublished" datetime="2019-05-14T17:14:00+08:00">2019-05-14</time>
             
 
             
@@ -476,7 +478,7 @@ daovoice('update');
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/linux/" itemprop="url" rel="index"><span itemprop="name">linux</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/code/" itemprop="url" rel="index"><span itemprop="name">code</span></a></span>
 
                 
                 
@@ -495,8 +497,8 @@ daovoice('update');
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2019/04/29/linux学习之常用命令，持续更新/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/04/29/linux学习之常用命令，持续更新/" itemprop="commentCount"></span>
+                <a href="/20190514/leetcode练习题七：盛最多水的容器.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/20190514/leetcode练习题七：盛最多水的容器.html" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -504,7 +506,7 @@ daovoice('update');
 
           
           
-            <span id="/2019/04/29/linux学习之常用命令，持续更新/" class="leancloud_visitors" data-flag-title="linux学习之常用命令，持续更新">
+            <span id="/20190514/leetcode练习题七：盛最多水的容器.html" class="leancloud_visitors" data-flag-title="leetcode练习题七：盛最多水的容器">
               <span class="post-meta-divider">|</span>
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
@@ -529,7 +531,7 @@ daovoice('update');
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">6.8k</span>
+                <span title="本文字数">2.4k</span>
               
 
               
@@ -543,7 +545,7 @@ daovoice('update');
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">6 分钟</span>
+                <span title="阅读时长">2 分钟</span>
               
             </div>
           
@@ -566,80 +568,69 @@ daovoice('update');
       
 
       
-        <h3 id="1-vim常用命令"><a href="#1-vim常用命令" class="headerlink" title="1.vim常用命令"></a>1.vim常用命令</h3><table>
-<thead>
-<tr>
-<th>命令</th>
-<th>解释</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>v</td>
-<td>从光标当前位置开始，光标所经过的地方会被选中，再按一下v结束。</td>
-</tr>
-<tr>
-<td>d</td>
-<td>使用v选中后，删除</td>
-</tr>
-<tr>
-<td>y</td>
-<td>选中后，复制</td>
-</tr>
-<tr>
-<td>p</td>
-<td>粘贴</td>
-</tr>
-<tr>
-<td>u</td>
-<td>先esc，再按u撤销</td>
-</tr>
-<tr>
-<td>:set nu</td>
-<td>显示行号</td>
-</tr>
-<tr>
-<td>i</td>
-<td>插入</td>
-</tr>
-<tr>
-<td>:$</td>
-<td>跳转到文末</td>
-</tr>
-</tbody>
-</table>
-<hr>
-<h3 id="2-多行操作"><a href="#2-多行操作" class="headerlink" title="2.多行操作"></a>2.多行操作</h3><p><strong>2.1 多行删除</strong></p>
-<p>1.首先在命令模式下，输入“<code>：set nu</code>”显示行号；</p>
-<p>2.通过行号确定你要删除的行；</p>
-<p>3.命令输入“<code>：32,65d</code>”,回车键，32-   65行就被删除了，很快捷吧，如果无意中删除错了，可以使用‘<code>u</code>’键恢复（命令模式下）</p>
-<p><strong>2.2 多行注释</strong></p>
-<p>1.首先按esc进入命令行模式下，按下Ctrl + v, 进入列模式；</p>
-<p>2.选定要取消注释的多行；</p>
-<p>3.按下“<code>x</code>”或者“<code>d</code>”。<br>（注意：如果是“//”注释，那需要执行两次该操作，如果是“#”注释，一次即可）</p>
-<hr>
-<h3 id="3-操作文件"><a href="#3-操作文件" class="headerlink" title="3.操作文件"></a>3.操作文件</h3><p><strong>3.1  cd</strong><br><code>cd /home</code>      进入 ‘/ home’ 目录’<br><code>cd ..</code>             返回上一级目录<br><code>cd ../..</code>          返回上两级目录<br><code>cd -</code>               返回上次所在的目录<br><code>pwd</code>              显示工作路径</p>
-<hr>
-<p><strong>3.2 ls</strong><br><code>ls</code>                  查看目录中的文件<br><code>ls -a</code>              显示隐藏文件<br><code>ls -l</code>               显示文件和目录的详细资料</p>
-<hr>
-<p><strong>3.3 mkdir  &amp;&amp; cp &amp;&amp; rm</strong><br><code>mkdir  &#39;xx&#39;</code>    创建名为xx的目录<br><code>mkdir -p /tmp/dir1/dir2</code> 创建一个目录树<br><code>cp file1 file2</code> 复制一个文件<br><code>rm -r  dir1</code> 删除目录，不会删除里面文件<br><code>rm -rf dir1</code> 删除一个叫做 ‘dir1’ 的目录并同时删除其里面内容<br><code>rm -rf dir1 dir2</code> 同时删除两个目录及它们的内容 </p>
-<hr>
-<p><strong>3.3 find</strong><br><code>find / -name file1</code> 从 ‘/‘ 开始进入根文件系统搜索文件和目录，如果find ‘/tmp’ -name file1,则查找tmp下的file1文件<br><code>find / -xdev -name \*.sh</code> 搜索以sh结尾的文件，忽略光驱、捷盘等可移动设备 </p>
-<hr>
-<h3 id="4-操作进程-获取端口号"><a href="#4-操作进程-获取端口号" class="headerlink" title="4.操作进程-获取端口号"></a>4.操作进程-获取端口号</h3><p><code>pgrep tomcat</code> 快速直接查找进程id，查找tomcat的端口号<br><code>pidof  tomcat</code>  同上<br><code>killall  tomcat</code>  一般我们可以使用kill　-9 pid方式杀死一个进程，但是这样就需要先找到这个进程的进程id，实际上我们也可以直接根据名称杀死进程<br><code>pkill   tomcat</code>  同上<br><code>ps -p 21641 -o lstart,etime</code>  查看进程已运行时间：其中21641是你要查看进程的进程id。<br><code>lsof -i:4000</code> 查看都口号4000是哪一个进程占用</p>
-<hr>
-<h3 id="5-操作防火墙"><a href="#5-操作防火墙" class="headerlink" title="5.操作防火墙"></a>5.操作防火墙</h3><p>启动：<code>systemctl start firewalld</code><br>关闭： <code>systemctl stop firewalld</code><br>重启： <code>systemctl restart firewalld</code><br>查看状态： <code>systemctl status firewalld</code><br>开机禁用  ：<code>systemctl disable firewalld</code><br>开机启用  ： <code>systemctl enable firewalld</code></p>
-<p>新增一个开放端口：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --zone=public --add-port=80/tcp --permanent</span><br><span class="line">#说明:</span><br><span class="line">#–zone #作用域</span><br><span class="line">#–add-port=80/tcp #添加端口，格式为：端口/通讯协议</span><br><span class="line">#–permanent 永久生效，没有此参数重启后失效</span><br></pre></td></tr></table></figure></p>
-<p>配置重新载入：<code>firewall-cmd --reload</code><br>查看所有开放的端口：<code>firewall-cmd --zone=public --list-ports</code><br>查看某个端口是否开放：<code>firewall-cmd --zone=public --query-port=80/tcp</code><br>删除开放的端口：<code>firewall-cmd --zone=public --remove-port=80/tcp --permanent</code></p>
-<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p><code>df -h</code> 使用df命令可以快速查看各挂载路径磁盘占用情况。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">[root@izuf6dtic2d71rbvtn6126z tmp]<span class="comment"># df -h</span></span><br><span class="line">Filesystem      Size  Used Avail Use% Mounted on</span><br><span class="line">/dev/vda1        40G   12G   26G  31% /</span><br><span class="line">devtmpfs        905M     0  905M   0% /dev</span><br><span class="line">tmpfs           920M     0  920M   0% /dev/shm</span><br><span class="line">tmpfs           920M  944K  919M   1% /run</span><br><span class="line">tmpfs           920M     0  920M   0% /sys/fs/cgroup</span><br><span class="line">tmpfs           184M     0  184M   0% /run/user/0</span><br></pre></td></tr></table></figure></p>
-<p><code>du -h –-max-depth=1 /home(或者-d 1)</code>  当前目录以及各个子目录占用空间大小<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">[root@izuf6dtic2d71rbvtn6126z tmp]<span class="comment"># du -h –-max-depth=1 /home</span></span><br><span class="line">du: cannot access ‘–-max-depth=1’: No such file or directory</span><br><span class="line">4.0K	/home/mycat/.mozilla/extensions</span><br><span class="line">4.0K	/home/mycat/.mozilla/plugins</span><br><span class="line">12K	/home/mycat/.mozilla</span><br><span class="line">24K	/home/mycat</span><br><span class="line">36K	/home/jenkins/.java/fonts/1.8.0_171</span><br><span class="line">40K	/home/jenkins/.java/fonts</span><br><span class="line">44K	/home/jenkins/.java</span><br><span class="line">52K	/home/jenkins</span><br><span class="line">80K	/home</span><br></pre></td></tr></table></figure></p>
-<p><code>free -h</code> 当前内存使用情况<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[root@izuf6dtic2d71rbvtn6126z tmp]<span class="comment"># free -h</span></span><br><span class="line">total        used        free      shared  buff/cache   available</span><br><span class="line">Mem:           1.8G        886M         90M        1.0M        861M        746M</span><br><span class="line">Swap:            0B          0B          0B</span><br></pre></td></tr></table></figure></p>
-
+        <p>给定n个非负整数a1，a2，…，an，每个数代表坐标中的一个点(i,ai) 。在坐标内画n条垂直线，垂直线i的两个端点分别为(i,ai) 和 (i, 0)。找出其中的两条线，使得它们与x轴共同构成的容器可以容纳最多的水。</p>
+<p>说明：你不能倾斜容器，且n的值至少为 2。</p>
+<p><img src="https://aliyun-lc-upload.oss-cn-hangzhou.aliyuncs.com/aliyun-lc-upload/uploads/2018/07/25/question_11.jpg" alt="图片"></p>
+<p>图中垂直线代表输入数组 [1,8,6,2,5,4,8,3,7]。在此情况下，容器能够容纳水（表示为蓝色部分）的最大值为49。</p>
+<blockquote>
+<p>示例:输入: [1,8,6,2,5,4,8,3,7]<br>输出: 49</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">maxArea</span><span class="params">(<span class="keyword">int</span>[] height)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> left = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> maxArea = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> right = height.length - <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (left &lt; right) &#123;</span><br><span class="line">        <span class="comment">//短板决定高度*左右间距=最大面积</span></span><br><span class="line">        maxArea = Math.max(maxArea, Math.min(height[left], height[right]) * (right - left));</span><br><span class="line">        <span class="keyword">if</span> (height[left] &lt; height[right]) &#123;</span><br><span class="line">            left++;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            right--;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> maxArea;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
 
     
       
+
+  <div class="popular-posts-header">相关文章推荐</div>
+  <ul class="popular-posts">
+  
+    <li class="popular-posts-item">
+      
+        <div class="popular-posts-date">2019-04-26</div>
+      
+      
+      <div class="popular-posts-title"><a href="/20190426/leetcode-1.html" rel="bookmark">leetcode练习题一：判断能否变成递减数列</a></div>
+      
+    </li>
+  
+    <li class="popular-posts-item">
+      
+        <div class="popular-posts-date">2019-05-13</div>
+      
+      
+      <div class="popular-posts-title"><a href="/20190513/leetcode练习题三：罗马数字转阿拉伯数字.html" rel="bookmark">leetcode练习题三：罗马数字转阿拉伯数字</a></div>
+      
+    </li>
+  
+    <li class="popular-posts-item">
+      
+        <div class="popular-posts-date">2019-05-08</div>
+      
+      
+      <div class="popular-posts-title"><a href="/20190508/leetcode练习题二：买卖股票的最佳时机.html" rel="bookmark">leetcode练习题二：买卖股票的最佳时机</a></div>
+      
+    </li>
+  
+    <li class="popular-posts-item">
+      
+        <div class="popular-posts-date">2019-05-13</div>
+      
+      
+      <div class="popular-posts-title"><a href="/20190513/leetcode练习题五：整数反转.html" rel="bookmark">leetcode练习题五：整数反转</a></div>
+      
+    </li>
+  
+    <li class="popular-posts-item">
+      
+        <div class="popular-posts-date">2019-05-13</div>
+      
+      
+      <div class="popular-posts-title"><a href="/20190513/leetcode练习题四：最长公共前缀.html" rel="bookmark">leetcode练习题四：最长公共前缀</a></div>
+      
+    </li>
+  
+  </ul>
 
 
     
@@ -705,10 +696,10 @@ daovoice('update');
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
     
-    <a href="https:www.yh0729.cn/2019/04/29/linux学习之常用命令，持续更新/" title="linux学习之常用命令，持续更新" rel="noopener" target="_blank">https:www.yh0729.cn/2019/04/29/linux学习之常用命令，持续更新/</a>
+    <a href="https:www.yh0729.cn/20190514/leetcode练习题七：盛最多水的容器.html" title="leetcode练习题七：盛最多水的容器" rel="noopener" target="_blank">https:www.yh0729.cn/20190514/leetcode练习题七：盛最多水的容器.html</a>
   </li>
   <li class="post-copyright-license">
-    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow noopener noreferrer" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
 </ul>
 
 
@@ -720,7 +711,7 @@ daovoice('update');
       
         <div class="post-tags">
           
-            <a href="/tags/linux/" rel="tag"><i class="fa fa-tag"></i> linux</a>
+            <a href="/tags/leetcode/" rel="tag"><i class="fa fa-tag"></i> leetcode</a>
           
         </div>
       
@@ -754,8 +745,8 @@ daovoice('update');
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/04/26/leetcode-1/" rel="next" title="leetcode练习题一：判断能否变成递减数列">
-                <i class="fa fa-chevron-left"></i> leetcode练习题一：判断能否变成递减数列
+              <a href="/20190514/leetcode练习题六：回文数.html" rel="next" title="leetcode练习题六：回文数">
+                <i class="fa fa-chevron-left"></i> leetcode练习题六：回文数
               </a>
             
           </div>
@@ -764,8 +755,8 @@ daovoice('update');
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/05/08/leetcode练习题二：买卖股票的最佳时机/" rel="prev" title="leetcode练习题二：买卖股票的最佳时机">
-                leetcode练习题二：买卖股票的最佳时机 <i class="fa fa-chevron-right"></i>
+              <a href="/20190522/算法整理.html" rel="prev" title="算法整理">
+                算法整理 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -814,17 +805,8 @@ daovoice('update');
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <div class="site-overview-wrap sidebar-panel">
+      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -937,7 +919,7 @@ daovoice('update');
                   
                     
                   
-                  <a href="https://github.com/yh0729" title="GitHub &rarr; https://github.com/yh0729" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                  <a href="https://github.com/yh0729" title="GitHub &rarr; https://github.com/yh0729" rel="external nofollow noopener noreferrer" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
                 </span>
               
                 <span class="links-of-author-item">
@@ -948,7 +930,7 @@ daovoice('update');
                   
                     
                   
-                  <a href="https://weibo.com/3981333814/profile?rightmod=1&wvr=6&mod=personinfo" title="Weibo &rarr; https://weibo.com/3981333814/profile?rightmod=1&wvr=6&mod=personinfo" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i>Weibo</a>
+                  <a href="https://weibo.com/3981333814/profile?rightmod=1&wvr=6&mod=personinfo" title="Weibo &rarr; https://weibo.com/3981333814/profile?rightmod=1&wvr=6&mod=personinfo" rel="external nofollow noopener noreferrer" target="_blank"><i class="fa fa-fw fa-weibo"></i>Weibo</a>
                 </span>
               
             </div>
@@ -966,7 +948,7 @@ daovoice('update');
               <ul class="links-of-blogroll-list">
                 
                   <li class="links-of-blogroll-item">
-                    <a href="https://blog.enjoytoshare.club" title="https://blog.enjoytoshare.club" rel="noopener" target="_blank">WuGenQiang's blog</a>
+                    <a href="https://blog.enjoytoshare.club" title="https://blog.enjoytoshare.club" rel="external nofollow noopener noreferrer" target="_blank">WuGenQiang's blog</a>
                   </li>
                 
               </ul>
@@ -981,23 +963,6 @@ daovoice('update');
         </div>
       </div>
 
-      
-      <!--noindex-->
-        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-            
-            
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-vim常用命令"><span class="nav-text">1.vim常用命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-多行操作"><span class="nav-text">2.多行操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-操作文件"><span class="nav-text">3.操作文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-操作进程-获取端口号"><span class="nav-text">4.操作进程-获取端口号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-操作防火墙"><span class="nav-text">5.操作防火墙</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他"><span class="nav-text">其他</span></a></li></ol></div>
-            
-
-          </div>
-        </div>
-      <!--/noindex-->
       
 
       
@@ -1023,7 +988,7 @@ daovoice('update');
 
   
 </div>
-
+ 由 <a rel="external nofollow noopener noreferrer" class="theme-link" target="_blank" href="https://www.yh0729.cn">Hexo</a> 强力驱动
 
 
 
@@ -1039,8 +1004,8 @@ daovoice('update');
 
   <div class="BbeiAn-info" style="text-decoration:none;">
       鄂ICP备 -
-      <a href="http://www.miitbeian.gov.cn/">19012600号</a>&nbsp;&nbsp;
-     <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=42011602000644">鄂公网安备 42011602000644号</a>  
+      <a href="http://www.miitbeian.gov.cn/" rel="external nofollow noopener noreferrer" target="_blank">19012600号</a>&nbsp;&nbsp;
+     <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=42011602000644" rel="external nofollow noopener noreferrer">鄂公网安备 42011602000644号</a>  
   </div>
 
 
@@ -1112,8 +1077,6 @@ console.log("Hello World!");
     
       <div class="back-to-top">
         <i class="fa fa-arrow-up"></i>
-        
-          <span id="scrollpercent"><span>0</span>%</span>
         
       </div>
     

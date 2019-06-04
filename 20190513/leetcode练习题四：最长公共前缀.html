@@ -122,18 +122,18 @@ daovoice('update');
 
 
 
-  <meta name="description" content="给定一个长度为 n 的整数数组，你的任务是判断在最多改变 1 个元素的情况下，该数组能否变成一个非递减数列。我们是这样定义一个非递减数列的： 对于数组中所有的 i (1 &amp;lt;= i &amp;lt; n)，满足 array[i] &amp;lt;= array[i + 1]  示例 1:输入: [4,2,3]输出: True解释: 你可以通过把第一个4变成1来使得它成为一个非递减数列。   示例 2:输入:">
+  <meta name="description" content="编写一个函数来查找字符串数组中的最长公共前缀。如果不存在公共前缀，返回空字符串 “”。  示例 1:输入: [“flower”,”flow”,”flight”]输出: “fl”   示例 2:输入: [“dog”,”racecar”,”car”]输出: “”解释: 输入不存在公共前缀。  说明:所有输入只包含小写字母 a-z 。 个人觉得这个做法很暴力，但是还没想到更好的解决办法123456789">
 <meta name="keywords" content="leetcode">
 <meta property="og:type" content="article">
-<meta property="og:title" content="leetcode练习题一：判断能否变成递减数列">
-<meta property="og:url" content="https:www.yh0729.cn/2019/04/26/leetcode-1/index.html">
+<meta property="og:title" content="leetcode练习题四：最长公共前缀">
+<meta property="og:url" content="https:www.yh0729.cn/20190513/leetcode练习题四：最长公共前缀.html">
 <meta property="og:site_name" content="趁年轻别搞开发&#39;s blog">
-<meta property="og:description" content="给定一个长度为 n 的整数数组，你的任务是判断在最多改变 1 个元素的情况下，该数组能否变成一个非递减数列。我们是这样定义一个非递减数列的： 对于数组中所有的 i (1 &amp;lt;= i &amp;lt; n)，满足 array[i] &amp;lt;= array[i + 1]  示例 1:输入: [4,2,3]输出: True解释: 你可以通过把第一个4变成1来使得它成为一个非递减数列。   示例 2:输入:">
+<meta property="og:description" content="编写一个函数来查找字符串数组中的最长公共前缀。如果不存在公共前缀，返回空字符串 “”。  示例 1:输入: [“flower”,”flow”,”flight”]输出: “fl”   示例 2:输入: [“dog”,”racecar”,”car”]输出: “”解释: 输入不存在公共前缀。  说明:所有输入只包含小写字母 a-z 。 个人觉得这个做法很暴力，但是还没想到更好的解决办法123456789">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-04-26T03:56:41.000Z">
+<meta property="og:updated_time" content="2019-05-13T06:32:09.450Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="leetcode练习题一：判断能否变成递减数列">
-<meta name="twitter:description" content="给定一个长度为 n 的整数数组，你的任务是判断在最多改变 1 个元素的情况下，该数组能否变成一个非递减数列。我们是这样定义一个非递减数列的： 对于数组中所有的 i (1 &amp;lt;= i &amp;lt; n)，满足 array[i] &amp;lt;= array[i + 1]  示例 1:输入: [4,2,3]输出: True解释: 你可以通过把第一个4变成1来使得它成为一个非递减数列。   示例 2:输入:">
+<meta name="twitter:title" content="leetcode练习题四：最长公共前缀">
+<meta name="twitter:description" content="编写一个函数来查找字符串数组中的最长公共前缀。如果不存在公共前缀，返回空字符串 “”。  示例 1:输入: [“flower”,”flow”,”flight”]输出: “fl”   示例 2:输入: [“dog”,”racecar”,”car”]输出: “”解释: 输入不存在公共前缀。  说明:所有输入只包含小写字母 a-z 。 个人觉得这个做法很暴力，但是还没想到更好的解决办法123456789">
 
 
 
@@ -143,7 +143,7 @@ daovoice('update');
 
   
   
-  <link rel="canonical" href="https:www.yh0729.cn/2019/04/26/leetcode-1/">
+  <link rel="canonical" href="https:www.yh0729.cn/20190513/leetcode练习题四：最长公共前缀">
 
 
 
@@ -153,7 +153,7 @@ daovoice('update');
   };
 </script>
 
-  <title>leetcode练习题一：判断能否变成递减数列 | 趁年轻别搞开发's blog</title>
+  <title>leetcode练习题四：最长公共前缀 | 趁年轻别搞开发's blog</title>
   
 
 
@@ -388,7 +388,7 @@ daovoice('update');
 
   
 
-  <a href="https://github.com/yh0729" class="github-corner" title="Follow me on GitHub,thanks!" aria-label="Follow me on GitHub,thanks!" rel="noopener" target="_blank"><svg width="80" height="80" viewbox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a>
+  <a href="https://github.com/yh0729" class="github-corner" title="Follow me on GitHub,thanks!" aria-label="Follow me on GitHub,thanks!" rel="external nofollow noopener noreferrer" target="_blank"><svg width="80" height="80" viewbox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a>
 
 
 
@@ -415,7 +415,7 @@ daovoice('update');
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https:www.yh0729.cn/2019/04/26/leetcode-1/">
+    <link itemprop="mainEntityOfPage" href="https:www.yh0729.cn/20190513/leetcode练习题四：最长公共前缀.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="yh">
@@ -432,7 +432,7 @@ daovoice('update');
 
         
         
-          <h2 class="post-title" itemprop="name headline">leetcode练习题一：判断能否变成递减数列
+          <h2 class="post-title" itemprop="name headline">leetcode练习题四：最长公共前缀
 
               
             
@@ -458,7 +458,7 @@ daovoice('update');
                 
               
 
-              <time title="创建时间：2019-04-26 11:56:00" itemprop="dateCreated datePublished" datetime="2019-04-26T11:56:00+08:00">2019-04-26</time>
+              <time title="创建时间：2019-05-13 14:26:00" itemprop="dateCreated datePublished" datetime="2019-05-13T14:26:00+08:00">2019-05-13</time>
             
 
             
@@ -495,8 +495,8 @@ daovoice('update');
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2019/04/26/leetcode-1/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/04/26/leetcode-1/" itemprop="commentCount"></span>
+                <a href="/20190513/leetcode练习题四：最长公共前缀.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/20190513/leetcode练习题四：最长公共前缀.html" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -504,7 +504,7 @@ daovoice('update');
 
           
           
-            <span id="/2019/04/26/leetcode-1/" class="leancloud_visitors" data-flag-title="leetcode练习题一：判断能否变成递减数列">
+            <span id="/20190513/leetcode练习题四：最长公共前缀.html" class="leancloud_visitors" data-flag-title="leetcode练习题四：最长公共前缀">
               <span class="post-meta-divider">|</span>
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
@@ -529,7 +529,7 @@ daovoice('update');
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">5.9k</span>
+                <span title="本文字数">4.5k</span>
               
 
               
@@ -543,7 +543,7 @@ daovoice('update');
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">5 分钟</span>
+                <span title="阅读时长">4 分钟</span>
               
             </div>
           
@@ -566,14 +566,15 @@ daovoice('update');
       
 
       
-        <p>给定一个长度为 n 的整数数组，你的任务是判断在最多改变 1 个元素的情况下，该数组能否变成一个非递减数列。我们是这样定义一个非递减数列的： 对于数组中所有的 i (1 &lt;= i &lt; n)，满足 array[i] &lt;= array[i + 1]</p>
+        <p>编写一个函数来查找字符串数组中的最长公共前缀。<br>如果不存在公共前缀，返回空字符串 “”。</p>
 <blockquote>
-<p>示例 1:输入: [4,2,3]<br>输出: True<br>解释: 你可以通过把第一个4变成1来使得它成为一个非递减数列。</p>
+<p>示例 1:输入: [“flower”,”flow”,”flight”]<br>输出: “fl”</p>
 </blockquote>
 <blockquote>
-<p>示例 2:输入: [4,2,1]<br>输出: False<br>解释: 你不能在只改变一个元素的情况下将其变为非递减数列。<br>说明: n 的范围为 [1, 10,000]。</p>
+<p>示例 2:输入: [“dog”,”racecar”,”car”]<br>输出: “”<br>解释: 输入不存在公共前缀。</p>
 </blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 判断改变一个值是否能变成递增</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> arr 3 2 1, 1 2 1</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">private</span> Boolean <span class="title">changeOneToUp</span><span class="params">(<span class="keyword">int</span> arr[])</span> </span>&#123;</span><br><span class="line">    Boolean flag = <span class="keyword">true</span>;</span><br><span class="line">    <span class="comment">//2个数是一定可以的</span></span><br><span class="line">    <span class="keyword">if</span> (arr.length &lt; <span class="number">3</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> flag;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//3 5 4 4 6</span></span><br><span class="line">    <span class="keyword">int</span> count = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> left, right;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; arr.length - <span class="number">1</span>; i++) &#123;</span><br><span class="line">        <span class="comment">//第一个数没有左边的值，所以单独拿出来</span></span><br><span class="line">        <span class="keyword">if</span> (i == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="comment">//如果第一个数大于右边，则count++</span></span><br><span class="line">            <span class="keyword">if</span> (arr[<span class="number">0</span>] &gt; arr[<span class="number">1</span>]) &#123;</span><br><span class="line">                <span class="comment">//第一个重新赋值为较小的数，因为要判断 后面的数是否小于他左边的数</span></span><br><span class="line">                arr[<span class="number">0</span>] = arr[<span class="number">1</span>];</span><br><span class="line">                count++;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        left = arr[i - <span class="number">1</span>];</span><br><span class="line">        right = arr[i + <span class="number">1</span>];</span><br><span class="line">        <span class="comment">//此时的值判断是否比右边大，count++</span></span><br><span class="line">        <span class="keyword">if</span> (arr[i] &gt; right) &#123;</span><br><span class="line">            <span class="comment">//左边比右边大,则此时右边的值只能最小为arr[i]</span></span><br><span class="line">            <span class="keyword">if</span> (left &gt; right) &#123;</span><br><span class="line">                arr[i + <span class="number">1</span>] = arr[i];</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="comment">//此时 arr[i]，最小值范围在left-right之间，所以赋值最小值：left的值</span></span><br><span class="line">                arr[i] = left;</span><br><span class="line">            &#125;</span><br><span class="line">            count++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//count最大只能为1 ，才能符合条件</span></span><br><span class="line">    <span class="keyword">if</span> (count &gt; <span class="number">1</span>) &#123;</span><br><span class="line">        flag = <span class="keyword">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> flag;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>说明:所有输入只包含小写字母 a-z 。</p>
+<p>个人觉得这个做法很暴力，但是还没想到更好的解决办法<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">longestCommonPrefix</span><span class="params">(String[] strs)</span> </span>&#123;</span><br><span class="line">    <span class="comment">//思路：最长公共前缀 ，最长只能为数组里最短的那个支付串。</span></span><br><span class="line">    <span class="comment">// 1.先找出最短字符串.</span></span><br><span class="line">    <span class="comment">// 2.循环比较：循环最短字符串的长度，和其他字符串比较每个字符是否相等，直到有一个不等则返回前面所有相等的字符</span></span><br><span class="line">    String prefix = <span class="string">""</span>;</span><br><span class="line">    <span class="keyword">if</span>(strs.length==<span class="number">0</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> prefix;</span><br><span class="line">    &#125;</span><br><span class="line">    String min =strs[<span class="number">0</span>];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; strs.length; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (strs[i].length() &lt; min.length()) &#123;</span><br><span class="line">            min = strs[i];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> x=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">boolean</span> flag = <span class="keyword">false</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; min.length(); i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; strs.length - <span class="number">1</span>; j++) &#123;</span><br><span class="line">            <span class="keyword">char</span> current = strs[j].charAt(i);</span><br><span class="line">            <span class="keyword">char</span> next = strs[j + <span class="number">1</span>].charAt(i);</span><br><span class="line">            <span class="comment">//如果当前值不等于下一个值，改变flag</span></span><br><span class="line">            <span class="keyword">if</span> (current != next) &#123;</span><br><span class="line">                flag = <span class="keyword">true</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//终止循环</span></span><br><span class="line">        <span class="keyword">if</span> (flag) &#123;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        x++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> strs[<span class="number">0</span>].substring(<span class="number">0</span>,x);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -586,12 +587,21 @@ daovoice('update');
   
     <li class="popular-posts-item">
       
+        <div class="popular-posts-date">2019-04-26</div>
+      
+      
+      <div class="popular-posts-title"><a href="/20190426/leetcode-1.html" rel="bookmark">leetcode练习题一：判断能否变成递减数列</a></div>
+      
+    </li>
+  
+    <li class="popular-posts-item">
+      
         <div class="popular-posts-date">2019-05-14</div>
       
       
         <div class="popular-posts-img"><img src="https://aliyun-lc-upload.oss-cn-hangzhou.aliyuncs.com/aliyun-lc-upload/uploads/2018/07/25/question_11.jpg"></div>
       
-      <div class="popular-posts-title"><a href="/2019/05/14/leetcode练习题七：盛最多水的容器/" rel="bookmark">leetcode练习题七：盛最多水的容器</a></div>
+      <div class="popular-posts-title"><a href="/20190514/leetcode练习题七：盛最多水的容器.html" rel="bookmark">leetcode练习题七：盛最多水的容器</a></div>
       
     </li>
   
@@ -600,7 +610,7 @@ daovoice('update');
         <div class="popular-posts-date">2019-05-13</div>
       
       
-      <div class="popular-posts-title"><a href="/2019/05/13/leetcode练习题三：罗马数字转阿拉伯数字/" rel="bookmark">leetcode练习题三：罗马数字转阿拉伯数字</a></div>
+      <div class="popular-posts-title"><a href="/20190513/leetcode练习题三：罗马数字转阿拉伯数字.html" rel="bookmark">leetcode练习题三：罗马数字转阿拉伯数字</a></div>
       
     </li>
   
@@ -609,7 +619,7 @@ daovoice('update');
         <div class="popular-posts-date">2019-05-08</div>
       
       
-      <div class="popular-posts-title"><a href="/2019/05/08/leetcode练习题二：买卖股票的最佳时机/" rel="bookmark">leetcode练习题二：买卖股票的最佳时机</a></div>
+      <div class="popular-posts-title"><a href="/20190508/leetcode练习题二：买卖股票的最佳时机.html" rel="bookmark">leetcode练习题二：买卖股票的最佳时机</a></div>
       
     </li>
   
@@ -618,16 +628,7 @@ daovoice('update');
         <div class="popular-posts-date">2019-05-13</div>
       
       
-      <div class="popular-posts-title"><a href="/2019/05/13/leetcode练习题五：整数反转/" rel="bookmark">leetcode练习题五：整数反转</a></div>
-      
-    </li>
-  
-    <li class="popular-posts-item">
-      
-        <div class="popular-posts-date">2019-05-13</div>
-      
-      
-      <div class="popular-posts-title"><a href="/2019/05/13/leetcode练习题四：最长公共前缀/" rel="bookmark">leetcode练习题四：最长公共前缀</a></div>
+      <div class="popular-posts-title"><a href="/20190513/leetcode练习题五：整数反转.html" rel="bookmark">leetcode练习题五：整数反转</a></div>
       
     </li>
   
@@ -697,10 +698,10 @@ daovoice('update');
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
     
-    <a href="https:www.yh0729.cn/2019/04/26/leetcode-1/" title="leetcode练习题一：判断能否变成递减数列" rel="noopener" target="_blank">https:www.yh0729.cn/2019/04/26/leetcode-1/</a>
+    <a href="https:www.yh0729.cn/20190513/leetcode练习题四：最长公共前缀.html" title="leetcode练习题四：最长公共前缀" rel="noopener" target="_blank">https:www.yh0729.cn/20190513/leetcode练习题四：最长公共前缀.html</a>
   </li>
   <li class="post-copyright-license">
-    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow noopener noreferrer" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
 </ul>
 
 
@@ -746,8 +747,8 @@ daovoice('update');
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/04/26/感悟/" rel="next" title="第一篇blog：感悟">
-                <i class="fa fa-chevron-left"></i> 第一篇blog：感悟
+              <a href="/20190513/leetcode练习题三：罗马数字转阿拉伯数字.html" rel="next" title="leetcode练习题三：罗马数字转阿拉伯数字">
+                <i class="fa fa-chevron-left"></i> leetcode练习题三：罗马数字转阿拉伯数字
               </a>
             
           </div>
@@ -756,8 +757,8 @@ daovoice('update');
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/04/29/linux学习之常用命令，持续更新/" rel="prev" title="linux学习之常用命令，持续更新">
-                linux学习之常用命令，持续更新 <i class="fa fa-chevron-right"></i>
+              <a href="/20190513/leetcode练习题五：整数反转.html" rel="prev" title="leetcode练习题五：整数反转">
+                leetcode练习题五：整数反转 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -920,7 +921,7 @@ daovoice('update');
                   
                     
                   
-                  <a href="https://github.com/yh0729" title="GitHub &rarr; https://github.com/yh0729" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                  <a href="https://github.com/yh0729" title="GitHub &rarr; https://github.com/yh0729" rel="external nofollow noopener noreferrer" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
                 </span>
               
                 <span class="links-of-author-item">
@@ -931,7 +932,7 @@ daovoice('update');
                   
                     
                   
-                  <a href="https://weibo.com/3981333814/profile?rightmod=1&wvr=6&mod=personinfo" title="Weibo &rarr; https://weibo.com/3981333814/profile?rightmod=1&wvr=6&mod=personinfo" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i>Weibo</a>
+                  <a href="https://weibo.com/3981333814/profile?rightmod=1&wvr=6&mod=personinfo" title="Weibo &rarr; https://weibo.com/3981333814/profile?rightmod=1&wvr=6&mod=personinfo" rel="external nofollow noopener noreferrer" target="_blank"><i class="fa fa-fw fa-weibo"></i>Weibo</a>
                 </span>
               
             </div>
@@ -949,7 +950,7 @@ daovoice('update');
               <ul class="links-of-blogroll-list">
                 
                   <li class="links-of-blogroll-item">
-                    <a href="https://blog.enjoytoshare.club" title="https://blog.enjoytoshare.club" rel="noopener" target="_blank">WuGenQiang's blog</a>
+                    <a href="https://blog.enjoytoshare.club" title="https://blog.enjoytoshare.club" rel="external nofollow noopener noreferrer" target="_blank">WuGenQiang's blog</a>
                   </li>
                 
               </ul>
@@ -989,7 +990,7 @@ daovoice('update');
 
   
 </div>
-
+ 由 <a rel="external nofollow noopener noreferrer" class="theme-link" target="_blank" href="https://www.yh0729.cn">Hexo</a> 强力驱动
 
 
 
@@ -1005,8 +1006,8 @@ daovoice('update');
 
   <div class="BbeiAn-info" style="text-decoration:none;">
       鄂ICP备 -
-      <a href="http://www.miitbeian.gov.cn/">19012600号</a>&nbsp;&nbsp;
-     <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=42011602000644">鄂公网安备 42011602000644号</a>  
+      <a href="http://www.miitbeian.gov.cn/" rel="external nofollow noopener noreferrer" target="_blank">19012600号</a>&nbsp;&nbsp;
+     <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=42011602000644" rel="external nofollow noopener noreferrer">鄂公网安备 42011602000644号</a>  
   </div>
 
 
@@ -1078,8 +1079,6 @@ console.log("Hello World!");
     
       <div class="back-to-top">
         <i class="fa fa-arrow-up"></i>
-        
-          <span id="scrollpercent"><span>0</span>%</span>
         
       </div>
     
