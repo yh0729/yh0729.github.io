@@ -18,12 +18,12 @@
   
   <entry>
     <title>linux下redis开启远程连接</title>
-    <link href="https:www.yh0729.cn/20190603/linux%E4%B8%8Bredis%E5%BC%80%E5%90%AF%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5-1.html"/>
-    <id>https:www.yh0729.cn/20190603/linux下redis开启远程连接-1.html</id>
+    <link href="https:www.yh0729.cn/20190603/cjwilr2ax000xkwmu8ycxz01m.html"/>
+    <id>https:www.yh0729.cn/20190603/cjwilr2ax000xkwmu8ycxz01m.html</id>
     <published>2019-06-03T15:36:00.000Z</published>
     <updated>2019-06-04T07:03:40.000Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="linux下redis开启远程连接"><a href="#linux下redis开启远程连接" class="headerlink" title="linux下redis开启远程连接"></a>linux下redis开启远程连接</h2><p>步骤：<br>1.打开redis.conf文件<code>vim redis.conf</code><br>2.使用<code>/</code>命令搜索 daemonize no 改为 yes<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># By default Redis does not run as a daemon. Use 'yes' if you need it.</span></span><br><span class="line"><span class="comment"># Note that Redis will write a pid file in /var/run/redis.pid when daemonized.</span></span><br><span class="line">daemonize yes</span><br></pre></td></tr></table></figure></p><p>3.搜索bind，注释掉,然后添加<code>bind 0.0.0.0</code><img src="http://" alt><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># Examples:</span></span><br><span class="line"><span class="comment"># bind 127.0.0.1 ::1</span></span><br><span class="line"><span class="built_in">bind</span> 0.0.0.0</span><br></pre></td></tr></table></figure></p><p>4.搜索protected-mode，改为no<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># By default protected mode is enabled. You should disable it only if</span></span><br><span class="line"><span class="comment"># you are sure you want clients from other hosts to connect to Redis</span></span><br><span class="line"><span class="comment"># even if no authentication is configured, nor a specific set of interfaces</span></span><br><span class="line"><span class="comment"># are explicitly listed using the "bind" directive.</span></span><br><span class="line">protected-mode no</span><br></pre></td></tr></table></figure></p><p>5.给redis设置密码,别直接添加，先搜索requirepass，确定文件里是否有默认，再修改，保证唯一性<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">################################## SECURITY ###################################</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Require clients to issue AUTH &lt;PASSWORD&gt; before processing any other</span></span><br><span class="line"><span class="comment"># commands.  This might be useful in environments in which you do not trust</span></span><br><span class="line"><span class="comment"># others with access to the host running redis-server.</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># This should stay commented out for backward compatibility and because most</span></span><br><span class="line"><span class="comment"># people do not need auth (e.g. they run their own servers).</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># Warning: since Redis is pretty fast an outside user can try up to</span></span><br><span class="line"><span class="comment"># 150k passwords per second against a good box. This means that you should</span></span><br><span class="line"><span class="comment"># use a very strong password otherwise it will be very easy to break.</span></span><br><span class="line"><span class="comment">#填写你的password</span></span><br><span class="line"> requirepass <span class="string">'123456'</span></span><br></pre></td></tr></table></figure></p><p>6.根据你的配置文件，重启redis<br><code>./redis-server redis.conf</code></p><p>7.可用本地连接测试，也可用redis可视化工具连接<code>./redis-cli -h 127.0.0.1 -p 6379 -a 1234</code><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">[root@izuf6dtic2d71rbvtn6126z redis-4.0.6]<span class="comment"># ls</span></span><br><span class="line">00-RELEASENOTES  CONTRIBUTING  deps      INSTALL   MANIFESTO  redis.conf  runtest-cluster   sentinel.conf  tests</span><br><span class="line">BUGS             COPYING       dump.rdb  Makefile  README.md  runtest     runtest-sentinel  src            utils</span><br><span class="line">[root@izuf6dtic2d71rbvtn6126z redis-4.0.6]<span class="comment"># cd ./src/</span></span><br><span class="line">[root@izuf6dtic2d71rbvtn6126z src]<span class="comment"># ./redis-cli -h ip地址 -p 6379 -a 密码</span></span><br><span class="line">101.132.191.145:6379&gt; keys *</span><br><span class="line">1) <span class="string">"name"</span></span><br><span class="line">101.132.191.145:6379&gt;</span><br></pre></td></tr></table></figure></p><p><strong>注意：防火墙和服务器安全规则都需要开启redis对应端口</strong></p><h2 id="常用命令："><a href="#常用命令：" class="headerlink" title="常用命令："></a>常用命令：</h2><p>在redis-cli目录下执行 <code>./redis-cli KEYS &quot;article-*&quot; | xargs redis-cli DEL</code> 删除 article-* 开头的key<br>常用命令：<a href="https://www.runoob.com/redis/redis-commands.html" rel="external nofollow noopener noreferrer" target="_blank">传送门</a></p>]]></content>
+    <content type="html"><![CDATA[<h2 id="linux下redis开启远程连接"><a href="#linux下redis开启远程连接" class="headerlink" title="linux下redis开启远程连接"></a>linux下redis开启远程连接</h2><p>步骤：<br>1.打开redis.conf文件<code>vim redis.conf</code><br>2.使用<code>/</code>命令搜索 daemonize no 改为 yes<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># By default Redis does not run as a daemon. Use 'yes' if you need it.</span></span><br><span class="line"><span class="comment"># Note that Redis will write a pid file in /var/run/redis.pid when daemonized.</span></span><br><span class="line">daemonize yes</span><br></pre></td></tr></table></figure></p><p>3.搜索bind，注释掉,然后添加<code>bind 0.0.0.0</code><img src="http://" alt><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># Examples:</span></span><br><span class="line"><span class="comment"># bind 127.0.0.1 ::1</span></span><br><span class="line"><span class="built_in">bind</span> 0.0.0.0</span><br></pre></td></tr></table></figure></p><p>4.搜索protected-mode，改为no<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># By default protected mode is enabled. You should disable it only if</span></span><br><span class="line"><span class="comment"># you are sure you want clients from other hosts to connect to Redis</span></span><br><span class="line"><span class="comment"># even if no authentication is configured, nor a specific set of interfaces</span></span><br><span class="line"><span class="comment"># are explicitly listed using the "bind" directive.</span></span><br><span class="line">protected-mode no</span><br></pre></td></tr></table></figure></p><p>5.给redis设置密码,别直接添加，先搜索requirepass，确定文件里是否有默认，再修改，保证唯一性<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">################################## SECURITY ###################################</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Require clients to issue AUTH &lt;PASSWORD&gt; before processing any other</span></span><br><span class="line"><span class="comment"># commands.  This might be useful in environments in which you do not trust</span></span><br><span class="line"><span class="comment"># others with access to the host running redis-server.</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># This should stay commented out for backward compatibility and because most</span></span><br><span class="line"><span class="comment"># people do not need auth (e.g. they run their own servers).</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># Warning: since Redis is pretty fast an outside user can try up to</span></span><br><span class="line"><span class="comment"># 150k passwords per second against a good box. This means that you should</span></span><br><span class="line"><span class="comment"># use a very strong password otherwise it will be very easy to break.</span></span><br><span class="line"><span class="comment">#填写你的password</span></span><br><span class="line"> requirepass <span class="string">'123456'</span></span><br></pre></td></tr></table></figure></p><p>6.根据你的配置文件，重启redis<br><code>./redis-server redis.conf</code></p><p>7.可用本地连接测试，也可用redis可视化工具连接<code>./redis-cli -h 127.0.0.1 -p 6379 -a 1234</code><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">[root@izuf6dtic2d71rbvtn6126z redis-4.0.6]<span class="comment"># ls</span></span><br><span class="line">00-RELEASENOTES  CONTRIBUTING  deps      INSTALL   MANIFESTO  redis.conf  runtest-cluster   sentinel.conf  tests</span><br><span class="line">BUGS             COPYING       dump.rdb  Makefile  README.md  runtest     runtest-sentinel  src            utils</span><br><span class="line">[root@izuf6dtic2d71rbvtn6126z redis-4.0.6]<span class="comment"># cd ./src/</span></span><br><span class="line">[root@izuf6dtic2d71rbvtn6126z src]<span class="comment"># ./redis-cli -h ip地址 -p 6379 -a 密码</span></span><br><span class="line">101.132.191.145:6379&gt; keys *</span><br><span class="line">1) <span class="string">"name"</span></span><br><span class="line">101.132.191.145:6379&gt;</span><br></pre></td></tr></table></figure></p><p><strong>注意：防火墙和服务器安全规则都需要开启redis对应端口</strong></p><h2 id="常用命令："><a href="#常用命令：" class="headerlink" title="常用命令："></a>常用命令：</h2><p>在redis-cli目录下执行 <code>./redis-cli KEYS &quot;article-*&quot; | xargs redis-cli DEL</code> 删除 article-* 开头的key</p><p>常用命令：<a href="https://www.runoob.com/redis/redis-commands.html" rel="external nofollow noopener noreferrer" target="_blank">传送门</a></p>]]></content>
     
     <summary type="html">
     
@@ -43,8 +43,8 @@
   
   <entry>
     <title>Mycat的配置和使用</title>
-    <link href="https:www.yh0729.cn/20190523/Mycat%E7%9A%84%E4%BD%BF%E7%94%A8.html"/>
-    <id>https:www.yh0729.cn/20190523/Mycat的使用.html</id>
+    <link href="https:www.yh0729.cn/20190523/cjwilr1zp0001kwmu4i7x0yef.html"/>
+    <id>https:www.yh0729.cn/20190523/cjwilr1zp0001kwmu4i7x0yef.html</id>
     <published>2019-05-23T09:27:00.000Z</published>
     <updated>2019-06-04T06:52:25.000Z</updated>
     
@@ -72,8 +72,8 @@
   
   <entry>
     <title>算法整理</title>
-    <link href="https:www.yh0729.cn/20190522/%E7%AE%97%E6%B3%95%E6%95%B4%E7%90%86.html"/>
-    <id>https:www.yh0729.cn/20190522/算法整理.html</id>
+    <link href="https:www.yh0729.cn/20190522/cjwilr2b70015kwmuqj87d2uk.html"/>
+    <id>https:www.yh0729.cn/20190522/cjwilr2b70015kwmuqj87d2uk.html</id>
     <published>2019-05-22T09:51:00.000Z</published>
     <updated>2019-05-23T09:27:42.942Z</updated>
     
@@ -100,8 +100,8 @@
   
   <entry>
     <title>leetcode练习题七：盛最多水的容器</title>
-    <link href="https:www.yh0729.cn/20190514/leetcode%E7%BB%83%E4%B9%A0%E9%A2%98%E4%B8%83%EF%BC%9A%E7%9B%9B%E6%9C%80%E5%A4%9A%E6%B0%B4%E7%9A%84%E5%AE%B9%E5%99%A8.html"/>
-    <id>https:www.yh0729.cn/20190514/leetcode练习题七：盛最多水的容器.html</id>
+    <link href="https:www.yh0729.cn/20190514/cjwilr2a7000fkwmuznew58yg.html"/>
+    <id>https:www.yh0729.cn/20190514/cjwilr2a7000fkwmuznew58yg.html</id>
     <published>2019-05-14T09:14:00.000Z</published>
     <updated>2019-05-14T09:25:55.646Z</updated>
     
@@ -126,8 +126,8 @@
   
   <entry>
     <title>leetcode练习题六：回文数</title>
-    <link href="https:www.yh0729.cn/20190514/leetcode%E7%BB%83%E4%B9%A0%E9%A2%98%E5%85%AD%EF%BC%9A%E5%9B%9E%E6%96%87%E6%95%B0.html"/>
-    <id>https:www.yh0729.cn/20190514/leetcode练习题六：回文数.html</id>
+    <link href="https:www.yh0729.cn/20190514/cjwilr2ar000rkwmuucd11qgr.html"/>
+    <id>https:www.yh0729.cn/20190514/cjwilr2ar000rkwmuucd11qgr.html</id>
     <published>2019-05-14T07:28:29.000Z</published>
     <updated>2019-05-14T07:29:13.367Z</updated>
     
@@ -152,8 +152,8 @@
   
   <entry>
     <title>leetcode练习题五：整数反转</title>
-    <link href="https:www.yh0729.cn/20190513/leetcode%E7%BB%83%E4%B9%A0%E9%A2%98%E4%BA%94%EF%BC%9A%E6%95%B4%E6%95%B0%E5%8F%8D%E8%BD%AC.html"/>
-    <id>https:www.yh0729.cn/20190513/leetcode练习题五：整数反转.html</id>
+    <link href="https:www.yh0729.cn/20190513/cjwilr2ao000nkwmuhhaxtrnl.html"/>
+    <id>https:www.yh0729.cn/20190513/cjwilr2ao000nkwmuhhaxtrnl.html</id>
     <published>2019-05-13T09:36:00.000Z</published>
     <updated>2019-05-13T09:38:10.904Z</updated>
     
@@ -182,8 +182,8 @@
   
   <entry>
     <title>leetcode练习题四：最长公共前缀</title>
-    <link href="https:www.yh0729.cn/20190513/leetcode%E7%BB%83%E4%B9%A0%E9%A2%98%E5%9B%9B%EF%BC%9A%E6%9C%80%E9%95%BF%E5%85%AC%E5%85%B1%E5%89%8D%E7%BC%80.html"/>
-    <id>https:www.yh0729.cn/20190513/leetcode练习题四：最长公共前缀.html</id>
+    <link href="https:www.yh0729.cn/20190513/cjwilr2av000vkwmuobedqbwq.html"/>
+    <id>https:www.yh0729.cn/20190513/cjwilr2av000vkwmuobedqbwq.html</id>
     <published>2019-05-13T06:26:00.000Z</published>
     <updated>2019-05-13T06:32:09.450Z</updated>
     
@@ -211,8 +211,8 @@
   
   <entry>
     <title>leetcode练习题三：罗马数字转阿拉伯数字</title>
-    <link href="https:www.yh0729.cn/20190513/leetcode%E7%BB%83%E4%B9%A0%E9%A2%98%E4%B8%89%EF%BC%9A%E7%BD%97%E9%A9%AC%E6%95%B0%E5%AD%97%E8%BD%AC%E9%98%BF%E6%8B%89%E4%BC%AF%E6%95%B0%E5%AD%97.html"/>
-    <id>https:www.yh0729.cn/20190513/leetcode练习题三：罗马数字转阿拉伯数字.html</id>
+    <link href="https:www.yh0729.cn/20190513/cjwilr2a9000hkwmughb0xwdw.html"/>
+    <id>https:www.yh0729.cn/20190513/cjwilr2a9000hkwmughb0xwdw.html</id>
     <published>2019-05-13T05:26:00.000Z</published>
     <updated>2019-05-14T06:49:21.003Z</updated>
     
@@ -248,8 +248,8 @@
   
   <entry>
     <title>leetcode练习题二：买卖股票的最佳时机</title>
-    <link href="https:www.yh0729.cn/20190508/leetcode%E7%BB%83%E4%B9%A0%E9%A2%98%E4%BA%8C%EF%BC%9A%E4%B9%B0%E5%8D%96%E8%82%A1%E7%A5%A8%E7%9A%84%E6%9C%80%E4%BD%B3%E6%97%B6%E6%9C%BA.html"/>
-    <id>https:www.yh0729.cn/20190508/leetcode练习题二：买卖股票的最佳时机.html</id>
+    <link href="https:www.yh0729.cn/20190508/cjwilr2am000kkwmuzbuyjivg.html"/>
+    <id>https:www.yh0729.cn/20190508/cjwilr2am000kkwmuzbuyjivg.html</id>
     <published>2019-05-08T07:57:00.000Z</published>
     <updated>2019-05-08T09:52:14.066Z</updated>
     
@@ -275,8 +275,8 @@
   
   <entry>
     <title>linux学习之常用命令，持续更新</title>
-    <link href="https:www.yh0729.cn/20190429/linux%E5%AD%A6%E4%B9%A0%E4%B9%8B%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%EF%BC%8C%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0.html"/>
-    <id>https:www.yh0729.cn/20190429/linux学习之常用命令，持续更新.html</id>
+    <link href="https:www.yh0729.cn/20190429/cjwilr2b40010kwmug0ia9k8c.html"/>
+    <id>https:www.yh0729.cn/20190429/cjwilr2b40010kwmug0ia9k8c.html</id>
     <published>2019-04-29T07:32:00.000Z</published>
     <updated>2019-04-29T07:32:01.000Z</updated>
     
@@ -305,8 +305,8 @@
   
   <entry>
     <title>leetcode练习题一：判断能否变成递减数列</title>
-    <link href="https:www.yh0729.cn/20190426/leetcode-1.html"/>
-    <id>https:www.yh0729.cn/20190426/leetcode-1.html</id>
+    <link href="https:www.yh0729.cn/20190426/cjwilr1zu0002kwmu0ds502wz.html"/>
+    <id>https:www.yh0729.cn/20190426/cjwilr1zu0002kwmu0ds502wz.html</id>
     <published>2019-04-26T03:56:00.000Z</published>
     <updated>2019-04-26T03:56:41.000Z</updated>
     
@@ -331,8 +331,8 @@
   
   <entry>
     <title>第一篇blog：感悟</title>
-    <link href="https:www.yh0729.cn/20190426/%E6%84%9F%E6%82%9F.html"/>
-    <id>https:www.yh0729.cn/20190426/感悟.html</id>
+    <link href="https:www.yh0729.cn/20190426/cjwilr2b60013kwmu1d0bfk5c.html"/>
+    <id>https:www.yh0729.cn/20190426/cjwilr2b60013kwmu1d0bfk5c.html</id>
     <published>2019-04-26T03:45:00.000Z</published>
     <updated>2019-04-26T03:45:38.000Z</updated>
     
