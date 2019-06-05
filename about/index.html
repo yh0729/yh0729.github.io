@@ -48,6 +48,9 @@ daovoice('update');
 
 
 
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
 
 
 
@@ -62,6 +65,38 @@ daovoice('update');
   
   <link rel="stylesheet" href="/lib/fancybox/source/jquery.fancybox.css">
 
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link rel="stylesheet" href="//fonts.lug.ustc.edu.cn/css?family=Lato:300,300italic,400,400italic,700,700italic|Roboto Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext">
+  
 
 
 
@@ -630,6 +665,16 @@ daovoice('update');
           
 
           
+             <div class="cc-license motion-element" itemprop="license">
+              
+              
+                
+              
+              
+              
+              <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="external nofollow noopener noreferrer" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+             </div>
+          
 
           
           
@@ -681,7 +726,6 @@ daovoice('update');
 
   
 </div>
- 由 <a rel="external nofollow noopener noreferrer" class="theme-link" target="_blank" href="https://www.yh0729.cn">Hexo</a> 强力驱动
 
 
 
@@ -698,21 +742,14 @@ daovoice('update');
   <div class="BbeiAn-info" style="text-decoration:none;">
       鄂ICP备 -
       <a href="http://www.miitbeian.gov.cn/" rel="external nofollow noopener noreferrer" target="_blank">19012600号</a>&nbsp;&nbsp;
-     <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=42011602000644" rel="external nofollow noopener noreferrer">鄂公网安备 42011602000644号</a>  
+      <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=42011602000644" rel="external nofollow noopener noreferrer">鄂公网安备 42011602000644号</a>  
   </div>
-
-
-
-
-
-
-
 
 
 <script>
     var now = new Date(); 
     function createtime() { 
-        var grt= new Date("04/26/2019 9:00:00");//建站时间,喜提彩蛋
+        var grt= new Date("04/26/2019 9:00:00");//建站时间
         now.setTime(now.getTime()+250); 
         days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
         hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
@@ -724,7 +761,7 @@ daovoice('update');
         document.getElementById("times").innerHTML = hnum + " 时 " + mnum + " 分 " + snum + " 秒"; 
     } 
 setInterval("createtime()",250);
-console.log("Hello World!");
+console.log("恭喜你，喜提彩蛋！如需深入交流:),wx：Y6666660729H , qq:751978613");
 </script>
 
 
@@ -1342,7 +1379,24 @@ console.log("Hello World!");
 
   
 
+
 <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"left","width":300,"height":450},"mobile":{"show":true}});</script></body>
+<!--百度主动推送 -->
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
 <!--崩溃欺骗-->
 <!-- <script type="text/javascript" src="/js/crash_cheat.js"></script> -->
 </html>

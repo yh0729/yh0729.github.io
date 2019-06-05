@@ -2,7 +2,7 @@
 <search>
   <entry>
     <title><![CDATA[linux下redis开启远程连接]]></title>
-    <url>%2F20190603%2Fcjwilr2ax000xkwmu8ycxz01m.html</url>
+    <url>%2F20190603%2Flinux-redis-kqyclj.html</url>
     <content type="text"><![CDATA[linux下redis开启远程连接步骤：1.打开redis.conf文件vim redis.conf2.使用/命令搜索 daemonize no 改为 yes123# By default Redis does not run as a daemon. Use 'yes' if you need it.# Note that Redis will write a pid file in /var/run/redis.pid when daemonized.daemonize yes 3.搜索bind，注释掉,然后添加bind 0.0.0.01234## Examples:# bind 127.0.0.1 ::1bind 0.0.0.0 4.搜索protected-mode，改为no12345# By default protected mode is enabled. You should disable it only if# you are sure you want clients from other hosts to connect to Redis# even if no authentication is configured, nor a specific set of interfaces# are explicitly listed using the "bind" directive.protected-mode no 5.给redis设置密码,别直接添加，先搜索requirepass，确定文件里是否有默认，再修改，保证唯一性1234567891011121314################################## SECURITY #################################### Require clients to issue AUTH &lt;PASSWORD&gt; before processing any other# commands. This might be useful in environments in which you do not trust# others with access to the host running redis-server.## This should stay commented out for backward compatibility and because most# people do not need auth (e.g. they run their own servers).## Warning: since Redis is pretty fast an outside user can try up to# 150k passwords per second against a good box. This means that you should# use a very strong password otherwise it will be very easy to break.#填写你的password requirepass '123456' 6.根据你的配置文件，重启redis./redis-server redis.conf 7.可用本地连接测试，也可用redis可视化工具连接./redis-cli -h 127.0.0.1 -p 6379 -a 123412345678[root@izuf6dtic2d71rbvtn6126z redis-4.0.6]# ls00-RELEASENOTES CONTRIBUTING deps INSTALL MANIFESTO redis.conf runtest-cluster sentinel.conf testsBUGS COPYING dump.rdb Makefile README.md runtest runtest-sentinel src utils[root@izuf6dtic2d71rbvtn6126z redis-4.0.6]# cd ./src/[root@izuf6dtic2d71rbvtn6126z src]# ./redis-cli -h ip地址 -p 6379 -a 密码101.132.191.145:6379&gt; keys *1) "name"101.132.191.145:6379&gt; 注意：防火墙和服务器安全规则都需要开启redis对应端口 常用命令：在redis-cli目录下执行 ./redis-cli KEYS &quot;article-*&quot; | xargs redis-cli DEL 删除 article-* 开头的key 常用命令：传送门]]></content>
       <categories>
         <category>redis</category>
@@ -13,7 +13,7 @@
   </entry>
   <entry>
     <title><![CDATA[Mycat的配置和使用]]></title>
-    <url>%2F20190523%2Fcjwilr1zp0001kwmu4i7x0yef.html</url>
+    <url>%2F20190523%2Fmycat-config.html</url>
     <content type="text"><![CDATA[Mycat的配置和使用1. Mycat简介：MyCAT是一款由阿里Cobar演变而来的用于支持数据库，读写分离、分表分库的分布式中间件。MyCAT支持Oracle、MSSQL、MYSQL、PG、DB2关系型数据库，同时也支MongoDB等非关系型数据库。MyCAT原理：MyCAT主要是通过对SQL的拦截，然后经过一定规则的分片解析、路由分析、读写分离分析、缓存分析等，然后将SQL发给后端真实的数据块，并将返回的结果做适当处理返回给客户端。 分析：所有的数据库请求都将先访问Mycat，由Mycat与数据库交互，数据库将数据返回给程序。实际数据库可能有多个，他们也被称为多节点，或多切片。 2.windows安装下载链接：Mycatcmd进入bin目录。 安装: mycat install启动：mycat start关闭：mycat stop 3.使用3.1 文件目录： –bin 启动目录 –conf 配置文件存放配置文件的目录： –server.xml：是Mycat服务器参数调整和用户授权的配置文件。 –schema.xml：是逻辑库定义和表以及分片定义的配置文件。 –rule.xml： 是分片规则的配置文件，分片规则的具体一些参数信息单独存放为文件，也在这个目录下，配置文件修改需要重启MyCAT。 –log4j.xml： 日志存放在logs/log中，每天一个文件，日志的配置是在conf/log4j.xml中，根据自己的需要可以调整输出级别为debug，debug级别下，会输出更多的信息，方便排查问题。 –autopartition-long.txt,partition-hash-int.txt,sequence_conf.properties，sequence_db_conf.properties 分片相关的id分片规则配置文件 –lib MyCAT自身的jar包或依赖的jar包的存放目录。 –logs MyCAT日志的存放目录。日志存放在logs/log中，每天一个文件 3.2 分表分库在server.xml下添加一个用户，例如 123456789&lt;!-- 连接用户名，默认端口是8066 --&gt;&lt;user name="yh"&gt; &lt;!-- 连接密码 --&gt; &lt;property name="password"&gt;123456&lt;/property&gt; &lt;!-- 逻辑数据库名 --&gt; &lt;property name="schemas"&gt;MYCAT_DB&lt;/property&gt; &lt;!-- 开启只读 --&gt; &lt;property name="readOnly"&gt;false&lt;/property&gt;&lt;/user&gt; 运行mycat，使用navicat，输入以上用户名密码，即可连接，连接后即可看到逻辑数据库 配置schema.xml，配置数据库的表结构，配置分片 123456789101112131415161718&lt;!-- 数据库配置，与server.xml中的数据库对应 --&gt;&lt;schema name="MYCAT_DB" checkSQLschema="false" sqlMaxLimit="100"&gt; &lt;!-- user表的两个节点 --&gt; &lt;table name="user" primaryKey="id" autoIncrement="true" dataNode="dn1,dn2" rule="mod-long"/&gt;&lt;/schema&gt; &lt;!-- 分片配置 --&gt;&lt;dataNode name="dn1" dataHost="localhost" database="mycat" /&gt;&lt;dataNode name="dn2" dataHost="remotehost" database="mycat"/&gt;&lt;!-- 真实数据库配置 --&gt; &lt;dataHost name="remotehost" maxCon="1000" minCon="10" balance="0" writeType="0" dbType="mysql" dbDriver="native" switchType="1" slaveThreshold="100"&gt; &lt;heartbeat&gt;select user();&lt;/heartbeat&gt; &lt;writeHost host="db-M1" url="101.132.191.145:3306" user="root" password="1234"&gt;&lt;/writeHost&gt; &lt;/dataHost&gt;&lt;dataHost name="localhost" maxCon="1000" minCon="10" balance="0" writeType="0" dbType="mysql" dbDriver="native" switchType="1" slaveThreshold="100"&gt; &lt;heartbeat&gt;select user();&lt;/heartbeat&gt; &lt;writeHost host="db-M2" url="localhost:3306" user="root" password="1234"&gt;&lt;/writeHost&gt; &lt;/dataHost&gt; 修改rule.xml 的mod-long节点数，上面配置了两个节点，所以这里count值为2,12345&lt;function name="mod-long" class="io.mycat.route.function.PartitionByMod"&gt; &lt;!-- how many data nodes --&gt; &lt;!-- count值与分片个数相同 --&gt; &lt;property name="count"&gt;2&lt;/property&gt;&lt;/function&gt; 重启mycat，验证是否生效。在对应两个切片下创建user表，连接逻辑数据库，插入数据，这时会根据节点数取模算法。关于分片取模算法： 根据id进行取模 根据数据库集群的数量（或者说是表数量，mycat里面一个表对应一个库）12insert into user (id,name,sex) values (1,'anna','woman');insert into user (id,name,sex) values (2,'bob','man'); 此时两个节点数据库下各有一条数据(插入数据节点是0开始计算的，意思就是你插入id=1的数据，1%2=1,那就是第二个节点dn2)，大功告成。这时如果在逻辑数据库上执行 select * from user 的原理其实执行的是：select * from dn1.user和select * from dn2.user，最后把结果集给mycat进行封装 然后返回给客户端。 带条件查询：select * from db1.user where id =1mycat会进行转换 1%3=1 在dn2上！转换成select * from dn2.user where id = 1 ,即一次就能查出结果。 分页查询：select * from user limit 0,2此时它会往两个节点里发送请求（select * from dn1.user limit 0,2 , select * from dn2.user limit 0,2），谁先返回则返回谁的结果（不信可以多运行几次sql）。解决办法：select * from user order by id desc limit 0,1，加上排序后，返回的结果为两个节点所有数据排序后再分页的结果。 bug解决办法：修改schema.xml文件,checkSQLschema=”fasle”,改为true1&lt;schema name="MYCAT_DB" checkSQLschema="true" sqlMaxLimit="100"&gt; 3.3 Mysql主从复制3.3.1 主库配置：1.编辑linux目录下/etc/my.cnf （mysql的配置文件路径）vim /etc/my.cnf2.在文件的 [mysqld] 下 添加以代码123456789[mysqld]#示开启二进制日志，并把二进制日志前缀改为mysql-binlog-bin = mysql-bin#随意数字，只要和从库不相等即可server-id = 6#表示需要备份的数据库为test binlog-do-db = test#表示需要备份的数据库为mycat下的user表binlog-do-db = mycat.user 3.在mysql中创建一个用户create user &#39;myslave&#39;@&#39;%&#39; identified by &#39;123456&#39;; 4.给myslave用户配置主从复制的权限：grant replication slave on *.* to &#39;myslave&#39;@&#39;%&#39; identified by &#39;123456&#39;; 5.刷新权限：flush privileges; 6.查看主服务状态：show master status; 3.3.2从库配置1.编辑mysql安装目录下的my.ini,如果没有自行百度，添加一个my.ini2.在文件my.ini的[mysqld] 下 添加以代码123456789[mysqld]#示开启二进制日志，并把二进制日志前缀改为mysql-binlog-bin = mysql-bin#随意数字，只要和主库不相等即可server-id = 2#表示需要备份的数据库为test binlog-do-db = test#表示需要备份的数据库为mycat下的user表binlog-do-db = mycat.user 待续。。。。]]></content>
       <categories>
         <category>中间件</category>
@@ -26,7 +26,7 @@
   </entry>
   <entry>
     <title><![CDATA[算法整理]]></title>
-    <url>%2F20190522%2Fcjwilr2b70015kwmuqj87d2uk.html</url>
+    <url>%2F20190522%2Falgorithmic-Arrangement.html</url>
     <content type="text"><![CDATA[闲来无聊，整理了一下各种算法，还没更新完，先写这些吧。。。 选择排序123456789101112131415161718192021222324252627// 选择排序（Selection sort）是一种简单直观的排序算法。// 它的工作原理是每一次从待排序的数据元素中选出最小（或最大）的一个元素，存放在序列的起始位置，然后，再从剩余未排序元素中继续寻找最小（大）元素，然后放到已排序序列的末尾。// 以此类推，直到全部待排序的数据元素排完。 选择排序是不稳定的排序方法。public void SelectionSort(int arr[]) &#123; if (arr.length == 0 || arr == null) &#123; return; &#125; //思路：获取最小的数，放在最前面 int minIndex = 0; int temp = 0; for (int i = 0; i &lt; arr.length - 1; i++) &#123; minIndex = i; for (int j = i + 1; j &lt; arr.length; j++) &#123; if (arr[minIndex] &gt; arr[j]) &#123; //获取到最小值的下标 minIndex = j; &#125; &#125; //交换位置 temp = arr[i]; arr[i] = arr[minIndex]; arr[minIndex] = temp; &#125; for (int x : arr) &#123; System.out.print(x + " "); &#125;&#125; 冒泡排序123456789101112131415161718192021222324public void bubbleSort(int arr[]) &#123; //冒泡排序算法的原理如下： //比较相邻的元素。如果第一个比第二个大，就交换他们两个。 //对每一对相邻元素做同样的工作，从开始第一对到结尾的最后一对。在这一点，最后的元素应该会是最大的数。 //针对所有的元素重复以上的步骤，除了最后一个。 //持续每次对越来越少的元素重复上面的步骤，直到没有任何一对数字需要比较。 if (arr.length &lt; 2 || arr == null) &#123; return; &#125; //外层控制需要排序的趟数，内层循环控制 每趟相互比较的次数 for (int i = 0; i &lt; arr.length - 1; i++) &#123; //由于每次比较都会把最大数，放入数组最后，所以每次比较会，i个数都不需要比较了 for (int j = 0; j &lt; arr.length - 1 - i; j++) &#123; if (arr[j] &gt; arr[j + 1]) &#123; arr[j] = arr[j + 1] + arr[j]; arr[j + 1] = arr[j] - arr[j + 1]; arr[j] = arr[j] - arr[j + 1]; &#125; &#125; &#125; for (int x : arr) &#123; System.out.print(x + " "); &#125;&#125; 快速排序12345678910111213141516171819202122232425262728293031323334353637383940/** * 快速排序 * * @param arr * @param left * @param right */public void quicksort(int arr[], int left, int right) &#123; if (left &gt;= right) &#123; return; &#125; int init_left = left; int init_right = right; //以数组的第一个数为基准 int start = arr[left]; while (left != right) &#123; //找到右边比左边小的数，交换位置 while (left &lt; right &amp;&amp; arr[right] &gt;= start) &#123; right--; &#125; //交换 arr[left] = arr[right]; arr[right] = start; //此时从左边开始，找到大于基准值的值，交换位置 while (left &lt; right &amp;&amp; arr[left] &lt;= arr[right]) &#123; left++; &#125; arr[right] = arr[left]; arr[left] = start; &#125; System.out.println("节点值：" + left); System.out.println("排序结果："); for (int i = 0; i &lt; arr.length; i++) &#123; System.out.print(arr[i] + " "); &#125; System.out.println(); quicksort(arr, init_left, left - 1); quicksort(arr, right + 1, init_right);&#125;]]></content>
       <categories>
         <category>算法</category>
@@ -38,7 +38,7 @@
   </entry>
   <entry>
     <title><![CDATA[leetcode练习题七：盛最多水的容器]]></title>
-    <url>%2F20190514%2Fcjwilr2a7000fkwmuznew58yg.html</url>
+    <url>%2F20190514%2Fleet0514-sszdrq.html</url>
     <content type="text"><![CDATA[给定n个非负整数a1，a2，…，an，每个数代表坐标中的一个点(i,ai) 。在坐标内画n条垂直线，垂直线i的两个端点分别为(i,ai) 和 (i, 0)。找出其中的两条线，使得它们与x轴共同构成的容器可以容纳最多的水。 说明：你不能倾斜容器，且n的值至少为 2。 图中垂直线代表输入数组 [1,8,6,2,5,4,8,3,7]。在此情况下，容器能够容纳水（表示为蓝色部分）的最大值为49。 示例:输入: [1,8,6,2,5,4,8,3,7]输出: 49 123456789101112131415public int maxArea(int[] height) &#123; int left = 0; int maxArea = 0; int right = height.length - 1; while (left &lt; right) &#123; //短板决定高度*左右间距=最大面积 maxArea = Math.max(maxArea, Math.min(height[left], height[right]) * (right - left)); if (height[left] &lt; height[right]) &#123; left++; &#125; else &#123; right--; &#125; &#125; return maxArea;&#125;]]></content>
       <categories>
         <category>code</category>
@@ -49,12 +49,18 @@
   </entry>
   <entry>
     <title><![CDATA[leetcode练习题六：回文数]]></title>
-    <url>%2F20190514%2Fcjwilr2ar000rkwmuucd11qgr.html</url>
+    <url>%2F20190514%2Fleet0514-hwspx.html</url>
     <content type="text"><![CDATA[判断一个整数是否是回文数。回文数是指正序（从左向右）和倒序（从右向左）读都是一样的整数。 示例 1:输入: 121输出: true 示例 2:输入: -121输出: false解释: 从左向右读, 为 -121 。从右向左读, 为 121- 。因此它不是一个回文数。 示例 3:输入: 10输出: false解释: 从右向左读, 为 01 。因此它不是一个回文数。 进阶:你能不将整数转为字符串来解决这个问题吗？ 12345678910111213141516171819202122//判断一个数是否是回文数public boolean isPalindrome(int x) &#123; boolean flag = false; int temp = x; if (x &lt; 0) &#123; return flag; &#125; LinkedList&lt;Integer&gt; linkedList = new LinkedList&lt;Integer&gt;(); while (x != 0) &#123; linkedList.add(x % 10); x /= 10; &#125; int len = linkedList.size(); Double sum = 0d; for (int i = 0; i &lt; len; i++) &#123; sum += linkedList.get(i) * Math.pow(10, len - 1 - i); &#125; if (sum == temp) &#123; flag = true; &#125; return flag;&#125;]]></content>
+      <categories>
+        <category>code</category>
+      </categories>
+      <tags>
+        <tag>leetcode</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[leetcode练习题五：整数反转]]></title>
-    <url>%2F20190513%2Fcjwilr2ao000nkwmuhhaxtrnl.html</url>
+    <url>%2F20190513%2Fleet0513-fz.html</url>
     <content type="text"><![CDATA[给出一个 32 位的有符号整数，你需要将这个整数中每位上的数字进行反转。 示例 1:输入: 123输出: 321 示例 2:输入: -123输出: -321 示例 3:输入: 120输出: 21 注意:假设我们的环境只能存储得下 32 位的有符号整数，则其数值范围为 [−231, 231 − 1]。请根据这个假设，如果反转后整数溢出那么就返回 0。 1234567891011121314151617 //思路：转成字符（总感觉这个办法很傻屌）public int reverse(int x) &#123; String temp = String.valueOf(x); String temp2 = ""; if (temp.charAt(0) == '-') &#123; temp = temp.substring(1, temp.length()); temp2 = "-"; &#125; for (int i = temp.length(); i &gt; 0; i--) &#123; temp2 += temp.charAt(i - 1); &#125; Long aLong = Long.valueOf(temp2); if (aLong &lt; -(2 &lt;&lt; 30) || aLong &gt; (2 &lt;&lt; 30) - 1) &#123; return 0; &#125; return Integer.valueOf(temp2);&#125;]]></content>
       <categories>
         <category>code</category>
@@ -65,7 +71,7 @@
   </entry>
   <entry>
     <title><![CDATA[leetcode练习题四：最长公共前缀]]></title>
-    <url>%2F20190513%2Fcjwilr2av000vkwmuobedqbwq.html</url>
+    <url>%2F20190513%2Fleet0513-zcggqz.html</url>
     <content type="text"><![CDATA[编写一个函数来查找字符串数组中的最长公共前缀。如果不存在公共前缀，返回空字符串 “”。 示例 1:输入: [“flower”,”flow”,”flight”]输出: “fl” 示例 2:输入: [“dog”,”racecar”,”car”]输出: “”解释: 输入不存在公共前缀。 说明:所有输入只包含小写字母 a-z 。 个人觉得这个做法很暴力，但是还没想到更好的解决办法123456789101112131415161718192021222324252627282930313233public String longestCommonPrefix(String[] strs) &#123; //思路：最长公共前缀 ，最长只能为数组里最短的那个支付串。 // 1.先找出最短字符串. // 2.循环比较：循环最短字符串的长度，和其他字符串比较每个字符是否相等，直到有一个不等则返回前面所有相等的字符 String prefix = ""; if(strs.length==0)&#123; return prefix; &#125; String min =strs[0]; for (int i = 1; i &lt; strs.length; i++) &#123; if (strs[i].length() &lt; min.length()) &#123; min = strs[i]; &#125; &#125; int x=0; boolean flag = false; for (int i = 0; i &lt; min.length(); i++) &#123; for (int j = 0; j &lt; strs.length - 1; j++) &#123; char current = strs[j].charAt(i); char next = strs[j + 1].charAt(i); //如果当前值不等于下一个值，改变flag if (current != next) &#123; flag = true; &#125; &#125; //终止循环 if (flag) &#123; break; &#125; x++; &#125; return strs[0].substring(0,x);&#125;]]></content>
       <categories>
         <category>code</category>
@@ -76,7 +82,7 @@
   </entry>
   <entry>
     <title><![CDATA[leetcode练习题三：罗马数字转阿拉伯数字]]></title>
-    <url>%2F20190513%2Fcjwilr2a9000hkwmughb0xwdw.html</url>
+    <url>%2F20190513%2Fleet0513-intToRoman.html</url>
     <content type="text"><![CDATA[罗马数字包含以下七种字符: I， V， X， L，C，D 和 M。 字符 数值 I 1 V 5 X 10 L 50 C 100 D 500 M 1000 例如， 罗马数字 2 写做 II ，即为两个并列的 1。12 写做 XII ，即为 X + II 。 27 写做 XXVII, 即为 XX + V + II 。 通常情况下，罗马数字中小的数字在大的数字的右边。但也存在特例，例如 4 不写做 IIII，而是 IV。数字 1 在数字 5 的左边，所表示的数等于大数 5 减小数 1 得到的数值 4 。同样地，数字 9 表示为 IX。这个特殊的规则只适用于以下六种情况： I 可以放在 V (5) 和 X (10) 的左边，来表示 4 和 9。 X 可以放在 L (50) 和 C (100) 的左边，来表示 40 和 90。 C 可以放在 D (500) 和 M (1000) 的左边，来表示 400 和 900。 给定一个罗马数字，将其转换成整数。输入确保在 1 到 3999 的范围内。 示例 1:输入: “III”输出: 3 示例 2:输入: “IV”输出: 4 示例 3:输入: “IX”输出: 9 示例 4:输入: “LVIII”输出: 58解释: L = 50, V= 5, III = 3. 示例 5:输入: “MCMXCIV”输出: 1994解释: M = 1000, CM = 900, XC = 90, IV = 4. 1.罗马数字转阿拉伯数字1234567891011121314151617181920212223242526272829303132public int romanToInt(String s) &#123; //储存所有罗马数字 Map&lt;String, Integer&gt; map = new HashMap&lt;&gt;(); map.put("I", 1); map.put("V", 5); map.put("X", 10); map.put("L", 50); map.put("C", 100); map.put("D", 500); map.put("M", 1000); int sum = 0; for (int i = 0; i &lt; s.length(); i++) &#123; String s1 = Character.toString(s.charAt(i)); Integer cur = map.get(s1); //判断这个字符是否是最后一个，避免空指针 if (s.length() - 1 == i) &#123; sum += cur; continue; &#125; Integer next = map.get(Character.toString(s.charAt(i + 1))); //当前值如果小于下一个值，则获取这两个罗马数字联合的值 if (cur &lt; next) &#123; sum += next - cur; //这里由于是计算两个罗马符号的值，所以下一次循环跳过 i++; &#125; else &#123; //正常情况 则 加上当前值 sum += cur; &#125; &#125; return sum;&#125; 2.阿拉伯数字转罗马数字12345678910111213//阿拉伯数字转罗马数字public String intToRoman(int num) &#123; int ints[] = &#123;1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1&#125;; String roman[] = &#123;"M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"&#125;; StringBuilder sb = new StringBuilder(); for (int i = 0; i &lt; ints.length; i++) &#123; while (ints[i] &lt;= num) &#123; sb.append(roman[i]); num -= ints[i]; &#125; &#125; return sb.toString();&#125;]]></content>
       <categories>
         <category>code</category>
@@ -87,7 +93,7 @@
   </entry>
   <entry>
     <title><![CDATA[leetcode练习题二：买卖股票的最佳时机]]></title>
-    <url>%2F20190508%2Fcjwilr2am000kkwmuzbuyjivg.html</url>
+    <url>%2F20190508%2Fleet0508-shares.html</url>
     <content type="text"><![CDATA[给定一个数组，它的第 i 个元素是一支给定股票第 i 天的价格。如果你最多只允许完成一笔交易（即买入和卖出一支股票），设计一个算法来计算你所能获取的最大利润。注意你不能在买入股票前卖出股票。 示例 1: 输入: [7,1,5,3,6,4]输出: 5解释: 在第 2 天（股票价格 = 1）的时候买入，在第 5 天（股票价格 = 6）的时候卖出，最大利润 = 6-1 = 5 。注意利润不能是 7-1 = 6, 因为你不能在买入股票前卖出股票。 示例 2: 输入: [7,6,4,3,1]输出: 0解释: 在这种情况下, 没有交易完成, 所以最大利润为 0。 1234567891011121314//暴力解法public int maxProfit(int[] prices) &#123; int maxProfit = 0; for (int i = 0; i &lt; prices.length - 1; i++) &#123; int x = prices[i]; //拿到每一个数，获取后面的数 算出最大差 for (int j = i + 1; j &lt;= prices.length - 1; j++) &#123; if (prices[j] - x &gt; maxProfit) &#123; maxProfit = prices[j] - x; &#125; &#125; &#125; return maxProfit;&#125; 123456789101112131415161718//最优解法：一次遍历 public int maxProfit2(int[] prices) &#123; int maxprofit = 0; if (prices.length == 0) &#123; return maxprofit; &#125; int minprice = prices[0]; for (int i = 1; i &lt; prices.length; i++) &#123; //小于最小值则赋值，否则获取差 if (prices[i] &lt; minprice) &#123; minprice = prices[i]; &#125; else if (prices[i] - minprice &gt; maxprofit) &#123; //判断是否是最大差值 maxprofit = prices[i] - minprice; &#125; &#125; return maxprofit; &#125;]]></content>
       <categories>
         <category>code</category>
@@ -98,7 +104,7 @@
   </entry>
   <entry>
     <title><![CDATA[linux学习之常用命令，持续更新]]></title>
-    <url>%2F20190429%2Fcjwilr2b40010kwmug0ia9k8c.html</url>
+    <url>%2F20190429%2Flinuxcommand.html</url>
     <content type="text"><![CDATA[1.vim常用命令 命令 解释 v 从光标当前位置开始，光标所经过的地方会被选中，再按一下v结束。 d 使用v选中后，删除 y 选中后，复制 p 粘贴 u 先esc，再按u撤销 :set nu 显示行号 i 插入 :$ 跳转到文末 2.多行操作2.1 多行删除 1.首先在命令模式下，输入“：set nu”显示行号； 2.通过行号确定你要删除的行； 3.命令输入“：32,65d”,回车键，32- 65行就被删除了，很快捷吧，如果无意中删除错了，可以使用‘u’键恢复（命令模式下） 2.2 多行注释 1.首先按esc进入命令行模式下，按下Ctrl + v, 进入列模式； 2.选定要取消注释的多行； 3.按下“x”或者“d”。（注意：如果是“//”注释，那需要执行两次该操作，如果是“#”注释，一次即可） 3.操作文件3.1 cdcd /home 进入 ‘/ home’ 目录’cd .. 返回上一级目录cd ../.. 返回上两级目录cd - 返回上次所在的目录pwd 显示工作路径 3.2 lsls 查看目录中的文件ls -a 显示隐藏文件ls -l 显示文件和目录的详细资料 3.3 mkdir &amp;&amp; cp &amp;&amp; rmmkdir &#39;xx&#39; 创建名为xx的目录mkdir -p /tmp/dir1/dir2 创建一个目录树cp file1 file2 复制一个文件rm -r dir1 删除目录，不会删除里面文件rm -rf dir1 删除一个叫做 ‘dir1’ 的目录并同时删除其里面内容rm -rf dir1 dir2 同时删除两个目录及它们的内容 3.3 findfind / -name file1 从 ‘/‘ 开始进入根文件系统搜索文件和目录，如果find ‘/tmp’ -name file1,则查找tmp下的file1文件find / -xdev -name \*.sh 搜索以sh结尾的文件，忽略光驱、捷盘等可移动设备 4.操作进程-获取端口号pgrep tomcat 快速直接查找进程id，查找tomcat的端口号pidof tomcat 同上killall tomcat 一般我们可以使用kill -9 pid方式杀死一个进程，但是这样就需要先找到这个进程的进程id，实际上我们也可以直接根据名称杀死进程pkill tomcat 同上ps -p 21641 -o lstart,etime 查看进程已运行时间：其中21641是你要查看进程的进程id。lsof -i:4000 查看都口号4000是哪一个进程占用 5.操作防火墙启动：systemctl start firewalld关闭： systemctl stop firewalld重启： systemctl restart firewalld查看状态： systemctl status firewalld开机禁用 ：systemctl disable firewalld开机启用 ： systemctl enable firewalld 新增一个开放端口：12345firewall-cmd --zone=public --add-port=80/tcp --permanent#说明:#–zone #作用域#–add-port=80/tcp #添加端口，格式为：端口/通讯协议#–permanent 永久生效，没有此参数重启后失效 配置重新载入：firewall-cmd --reload查看所有开放的端口：firewall-cmd --zone=public --list-ports查看某个端口是否开放：firewall-cmd --zone=public --query-port=80/tcp删除开放的端口：firewall-cmd --zone=public --remove-port=80/tcp --permanent 其他df -h 使用df命令可以快速查看各挂载路径磁盘占用情况。12345678[root@izuf6dtic2d71rbvtn6126z tmp]# df -hFilesystem Size Used Avail Use% Mounted on/dev/vda1 40G 12G 26G 31% /devtmpfs 905M 0 905M 0% /devtmpfs 920M 0 920M 0% /dev/shmtmpfs 920M 944K 919M 1% /runtmpfs 920M 0 920M 0% /sys/fs/cgrouptmpfs 184M 0 184M 0% /run/user/0 du -h –-max-depth=1 /home(或者-d 1) 当前目录以及各个子目录占用空间大小1234567891011[root@izuf6dtic2d71rbvtn6126z tmp]# du -h –-max-depth=1 /homedu: cannot access ‘–-max-depth=1’: No such file or directory4.0K /home/mycat/.mozilla/extensions4.0K /home/mycat/.mozilla/plugins12K /home/mycat/.mozilla24K /home/mycat36K /home/jenkins/.java/fonts/1.8.0_17140K /home/jenkins/.java/fonts44K /home/jenkins/.java52K /home/jenkins80K /home free -h 当前内存使用情况1234[root@izuf6dtic2d71rbvtn6126z tmp]# free -htotal used free shared buff/cache availableMem: 1.8G 886M 90M 1.0M 861M 746MSwap: 0B 0B 0B]]></content>
       <categories>
         <category>linux</category>
@@ -109,7 +115,7 @@
   </entry>
   <entry>
     <title><![CDATA[leetcode练习题一：判断能否变成递减数列]]></title>
-    <url>%2F20190426%2Fcjwilr1zu0002kwmu0ds502wz.html</url>
+    <url>%2F20190426%2Fleet0426-fdjsl.html</url>
     <content type="text"><![CDATA[给定一个长度为 n 的整数数组，你的任务是判断在最多改变 1 个元素的情况下，该数组能否变成一个非递减数列。我们是这样定义一个非递减数列的： 对于数组中所有的 i (1 &lt;= i &lt; n)，满足 array[i] &lt;= array[i + 1] 示例 1:输入: [4,2,3]输出: True解释: 你可以通过把第一个4变成1来使得它成为一个非递减数列。 示例 2:输入: [4,2,1]输出: False解释: 你不能在只改变一个元素的情况下将其变为非递减数列。说明: n 的范围为 [1, 10,000]。 12345678910111213141516171819202122232425262728293031323334353637383940414243444546/** * 判断改变一个值是否能变成递增 * * @param arr 3 2 1, 1 2 1 * @return */private Boolean changeOneToUp(int arr[]) &#123; Boolean flag = true; //2个数是一定可以的 if (arr.length &lt; 3) &#123; return flag; &#125; //3 5 4 4 6 int count = 0; int left, right; for (int i = 0; i &lt; arr.length - 1; i++) &#123; //第一个数没有左边的值，所以单独拿出来 if (i == 0) &#123; //如果第一个数大于右边，则count++ if (arr[0] &gt; arr[1]) &#123; //第一个重新赋值为较小的数，因为要判断 后面的数是否小于他左边的数 arr[0] = arr[1]; count++; &#125; continue; &#125; left = arr[i - 1]; right = arr[i + 1]; //此时的值判断是否比右边大，count++ if (arr[i] &gt; right) &#123; //左边比右边大,则此时右边的值只能最小为arr[i] if (left &gt; right) &#123; arr[i + 1] = arr[i]; &#125; else &#123; //此时 arr[i]，最小值范围在left-right之间，所以赋值最小值：left的值 arr[i] = left; &#125; count++; &#125; &#125; //count最大只能为1 ，才能符合条件 if (count &gt; 1) &#123; flag = false; &#125; return flag;&#125;]]></content>
       <categories>
         <category>code</category>
@@ -120,7 +126,7 @@
   </entry>
   <entry>
     <title><![CDATA[第一篇blog：感悟]]></title>
-    <url>%2F20190426%2Fcjwilr2b60013kwmu1d0bfk5c.html</url>
+    <url>%2F20190426%2Fsentiment.html</url>
     <content type="text"><![CDATA[生活不仅有眼前的苟且，还有未来的打击！]]></content>
       <categories>
         <category>生活</category>

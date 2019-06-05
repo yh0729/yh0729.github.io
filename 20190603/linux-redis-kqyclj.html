@@ -48,6 +48,9 @@ daovoice('update');
 
 
 
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
 
 
 
@@ -62,6 +65,38 @@ daovoice('update');
   
   <link rel="stylesheet" href="/lib/fancybox/source/jquery.fancybox.css">
 
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link rel="stylesheet" href="//fonts.lug.ustc.edu.cn/css?family=Lato:300,300italic,400,400italic,700,700italic|Roboto Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext">
+  
 
 
 
@@ -122,22 +157,20 @@ daovoice('update');
 
 
 
-  <meta name="description" content="Mycat的配置和使用1. Mycat简介：MyCAT是一款由阿里Cobar演变而来的用于支持数据库，读写分离、分表分库的分布式中间件。MyCAT支持Oracle、MSSQL、MYSQL、PG、DB2关系型数据库，同时也支MongoDB等非关系型数据库。MyCAT原理：MyCAT主要是通过对SQL的拦截，然后经过一定规则的分片解析、路由分析、读写分离分析、缓存分析等，然后将SQL发给后端真实的数据">
-<meta name="keywords" content="中间件,sql,mycat">
+  <meta name="description" content="linux下redis开启远程连接步骤：1.打开redis.conf文件vim redis.conf2.使用/命令搜索 daemonize no 改为 yes123# By default Redis does not run as a daemon. Use &apos;yes&apos; if you need it.# Note that Redis will write a pid file in /var/">
+<meta name="keywords" content="redis">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Mycat的配置和使用">
-<meta property="og:url" content="https:www.yh0729.cn/20190523/cjwilr1zp0001kwmu4i7x0yef.html">
+<meta property="og:title" content="linux下redis开启远程连接">
+<meta property="og:url" content="https:www.yh0729.cn/20190603/linux-redis-kqyclj.html">
 <meta property="og:site_name" content="趁年轻别搞开发&#39;s blog">
-<meta property="og:description" content="Mycat的配置和使用1. Mycat简介：MyCAT是一款由阿里Cobar演变而来的用于支持数据库，读写分离、分表分库的分布式中间件。MyCAT支持Oracle、MSSQL、MYSQL、PG、DB2关系型数据库，同时也支MongoDB等非关系型数据库。MyCAT原理：MyCAT主要是通过对SQL的拦截，然后经过一定规则的分片解析、路由分析、读写分离分析、缓存分析等，然后将SQL发给后端真实的数据">
+<meta property="og:description" content="linux下redis开启远程连接步骤：1.打开redis.conf文件vim redis.conf2.使用/命令搜索 daemonize no 改为 yes123# By default Redis does not run as a daemon. Use &apos;yes&apos; if you need it.# Note that Redis will write a pid file in /var/">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://img.yh0729.cn/mycat%E8%BF%9E%E6%8E%A5%E6%88%AA%E5%9B%BE.png">
-<meta property="og:image" content="https://img.yh0729.cn/mycat%E5%88%87%E7%89%87%E5%88%86%E9%A1%B5%E6%9F%A5%E8%AF%A2.png">
-<meta property="og:image" content="https://img.yh0729.cn/mycat%E6%8A%A5%E9%94%99.png">
-<meta property="og:updated_time" content="2019-06-04T06:52:25.000Z">
+<meta property="og:image" content="http:///">
+<meta property="og:updated_time" content="2019-06-04T07:03:40.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Mycat的配置和使用">
-<meta name="twitter:description" content="Mycat的配置和使用1. Mycat简介：MyCAT是一款由阿里Cobar演变而来的用于支持数据库，读写分离、分表分库的分布式中间件。MyCAT支持Oracle、MSSQL、MYSQL、PG、DB2关系型数据库，同时也支MongoDB等非关系型数据库。MyCAT原理：MyCAT主要是通过对SQL的拦截，然后经过一定规则的分片解析、路由分析、读写分离分析、缓存分析等，然后将SQL发给后端真实的数据">
-<meta name="twitter:image" content="https://img.yh0729.cn/mycat%E8%BF%9E%E6%8E%A5%E6%88%AA%E5%9B%BE.png">
+<meta name="twitter:title" content="linux下redis开启远程连接">
+<meta name="twitter:description" content="linux下redis开启远程连接步骤：1.打开redis.conf文件vim redis.conf2.使用/命令搜索 daemonize no 改为 yes123# By default Redis does not run as a daemon. Use &apos;yes&apos; if you need it.# Note that Redis will write a pid file in /var/">
+<meta name="twitter:image" content="http:///">
 
 
 
@@ -147,7 +180,7 @@ daovoice('update');
 
   
   
-  <link rel="canonical" href="https:www.yh0729.cn/20190523/cjwilr1zp0001kwmu4i7x0yef">
+  <link rel="canonical" href="https:www.yh0729.cn/20190603/linux-redis-kqyclj">
 
 
 
@@ -157,7 +190,7 @@ daovoice('update');
   };
 </script>
 
-  <title>Mycat的配置和使用 | 趁年轻别搞开发's blog</title>
+  <title>linux下redis开启远程连接 | 趁年轻别搞开发's blog</title>
   
 
 
@@ -419,7 +452,7 @@ daovoice('update');
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https:www.yh0729.cn/20190523/cjwilr1zp0001kwmu4i7x0yef.html">
+    <link itemprop="mainEntityOfPage" href="https:www.yh0729.cn/20190603/linux-redis-kqyclj.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="yh">
@@ -436,7 +469,7 @@ daovoice('update');
 
         
         
-          <h2 class="post-title" itemprop="name headline">Mycat的配置和使用
+          <h2 class="post-title" itemprop="name headline">linux下redis开启远程连接
 
               
             
@@ -462,7 +495,7 @@ daovoice('update');
                 
               
 
-              <time title="创建时间：2019-05-23 17:27:00" itemprop="dateCreated datePublished" datetime="2019-05-23T17:27:00+08:00">2019-05-23</time>
+              <time title="创建时间：2019-06-03 23:36:00" itemprop="dateCreated datePublished" datetime="2019-06-03T23:36:00+08:00">2019-06-03</time>
             
 
             
@@ -480,7 +513,7 @@ daovoice('update');
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/中间件/" itemprop="url" rel="index"><span itemprop="name">中间件</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/redis/" itemprop="url" rel="index"><span itemprop="name">redis</span></a></span>
 
                 
                 
@@ -499,8 +532,8 @@ daovoice('update');
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/20190523/cjwilr1zp0001kwmu4i7x0yef.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/20190523/cjwilr1zp0001kwmu4i7x0yef.html" itemprop="commentCount"></span>
+                <a href="/20190603/linux-redis-kqyclj.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/20190603/linux-redis-kqyclj.html" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -508,7 +541,7 @@ daovoice('update');
 
           
           
-            <span id="/20190523/cjwilr1zp0001kwmu4i7x0yef.html" class="leancloud_visitors" data-flag-title="Mycat的配置和使用">
+            <span id="/20190603/linux-redis-kqyclj.html" class="leancloud_visitors" data-flag-title="linux下redis开启远程连接">
               <span class="post-meta-divider">|</span>
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
@@ -533,7 +566,7 @@ daovoice('update');
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">12k</span>
+                <span title="本文字数">6.1k</span>
               
 
               
@@ -547,7 +580,7 @@ daovoice('update');
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">11 分钟</span>
+                <span title="阅读时长">6 分钟</span>
               
             </div>
           
@@ -570,57 +603,15 @@ daovoice('update');
       
 
       
-        <h1 id="Mycat的配置和使用"><a href="#Mycat的配置和使用" class="headerlink" title="Mycat的配置和使用"></a>Mycat的配置和使用</h1><h3 id="1-Mycat简介："><a href="#1-Mycat简介：" class="headerlink" title="1. Mycat简介："></a>1. Mycat简介：</h3><p>MyCAT是一款由阿里Cobar演变而来的用于支持数据库，读写分离、分表分库的分布式中间件。MyCAT支持Oracle、MSSQL、MYSQL、PG、DB2关系型数据库，同时也支MongoDB等非关系型数据库。MyCAT原理：MyCAT主要是通过对SQL的拦截，然后经过一定规则的分片解析、路由分析、读写分离分析、缓存分析等，然后将SQL发给后端真实的数据块，并将返回的结果做适当处理返回给客户端。</p>
-<p>分析：所有的数据库请求都将先访问Mycat，由Mycat与数据库交互，数据库将数据返回给程序。实际数据库可能有多个，他们也被称为多节点，或多切片。</p>
-<h3 id="2-windows安装"><a href="#2-windows安装" class="headerlink" title="2.windows安装"></a>2.windows安装</h3><p>下载链接：<a href="http://dl.mycat.io/" rel="external nofollow noopener noreferrer" target="_blank">Mycat</a><br>cmd进入bin目录。</p>
-<blockquote>
-<p>安装: <code>mycat install</code><br>启动：<code>mycat start</code><br>关闭：<code>mycat stop</code></p>
-</blockquote>
-<h3 id="3-使用"><a href="#3-使用" class="headerlink" title="3.使用"></a>3.使用</h3><h4 id="3-1-文件目录："><a href="#3-1-文件目录：" class="headerlink" title="3.1 文件目录："></a>3.1 文件目录：</h4><blockquote>
-<p>–bin  启动目录</p>
-</blockquote>
-<blockquote>
-<p>–conf 配置文件存放配置文件的目录：</p>
-</blockquote>
-<blockquote>
-<p>–server.xml：是Mycat服务器参数调整和用户授权的配置文件。</p>
-</blockquote>
-<blockquote>
-<p>–schema.xml：是逻辑库定义和表以及分片定义的配置文件。</p>
-</blockquote>
-<blockquote>
-<p>–rule.xml：  是分片规则的配置文件，分片规则的具体一些参数信息单独存放为文件，也在这个目录下，配置文件修改需要重启MyCAT。</p>
-</blockquote>
-<blockquote>
-<p>–log4j.xml： 日志存放在logs/log中，每天一个文件，日志的配置是在conf/log4j.xml中，根据自己的需要可以调整输出级别为debug，debug级别下，会输出更多的信息，方便排查问题。</p>
-</blockquote>
-<blockquote>
-<p>–autopartition-long.txt,partition-hash-int.txt,sequence_conf.properties，sequence_db_conf.properties 分片相关的id分片规则配置文件</p>
-</blockquote>
-<blockquote>
-<p>–lib      MyCAT自身的jar包或依赖的jar包的存放目录。    </p>
-</blockquote>
-<blockquote>
-<p>–logs   MyCAT日志的存放目录。日志存放在logs/log中，每天一个文件</p>
-</blockquote>
-<h4 id="3-2-分表分库"><a href="#3-2-分表分库" class="headerlink" title="3.2 分表分库"></a>3.2 分表分库</h4><p>在server.xml下添加一个用户，例如</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 连接用户名，默认端口是8066 --&gt;</span><br><span class="line">&lt;user name=<span class="string">"yh"</span>&gt;</span><br><span class="line">	&lt;!-- 连接密码 --&gt;</span><br><span class="line">	&lt;property name=<span class="string">"password"</span>&gt;123456&lt;/property&gt;</span><br><span class="line">	&lt;!-- 逻辑数据库名 --&gt;</span><br><span class="line">	&lt;property name=<span class="string">"schemas"</span>&gt;MYCAT_DB&lt;/property&gt;</span><br><span class="line">	&lt;!-- 开启只读 --&gt;</span><br><span class="line">	&lt;property name=<span class="string">"readOnly"</span>&gt;<span class="literal">false</span>&lt;/property&gt;</span><br><span class="line">&lt;/user&gt;</span><br></pre></td></tr></table></figure>
-<p>运行mycat，使用navicat，输入以上用户名密码，即可连接，连接后即可看到逻辑数据库<br><img src="https://img.yh0729.cn/mycat%E8%BF%9E%E6%8E%A5%E6%88%AA%E5%9B%BE.png" alt="mycat"></p>
-<p>配置schema.xml，配置数据库的表结构，配置分片</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 数据库配置，与server.xml中的数据库对应 --&gt;</span><br><span class="line">&lt;schema name=<span class="string">"MYCAT_DB"</span> checkSQLschema=<span class="string">"false"</span> sqlMaxLimit=<span class="string">"100"</span>&gt;</span><br><span class="line">	&lt;!-- user表的两个节点 --&gt;</span><br><span class="line">  &lt;table name=<span class="string">"user"</span> primaryKey=<span class="string">"id"</span> autoIncrement=<span class="string">"true"</span> dataNode=<span class="string">"dn1,dn2"</span> rule=<span class="string">"mod-long"</span>/&gt;</span><br><span class="line">&lt;/schema&gt;</span><br><span class="line"></span><br><span class="line"> &lt;!-- 分片配置 --&gt;</span><br><span class="line">&lt;dataNode name=<span class="string">"dn1"</span> dataHost=<span class="string">"localhost"</span> database=<span class="string">"mycat"</span> /&gt;</span><br><span class="line">&lt;dataNode name=<span class="string">"dn2"</span> dataHost=<span class="string">"remotehost"</span> database=<span class="string">"mycat"</span>/&gt;</span><br><span class="line">&lt;!-- 真实数据库配置 --&gt;</span><br><span class="line">   &lt;dataHost name=<span class="string">"remotehost"</span> maxCon=<span class="string">"1000"</span> minCon=<span class="string">"10"</span> balance=<span class="string">"0"</span> writeType=<span class="string">"0"</span> dbType=<span class="string">"mysql"</span> dbDriver=<span class="string">"native"</span> switchType=<span class="string">"1"</span> slaveThreshold=<span class="string">"100"</span>&gt;</span><br><span class="line">       &lt;heartbeat&gt;select user();&lt;/heartbeat&gt;</span><br><span class="line">       &lt;writeHost host=<span class="string">"db-M1"</span> url=<span class="string">"101.132.191.145:3306"</span> user=<span class="string">"root"</span> password=<span class="string">"1234"</span>&gt;&lt;/writeHost&gt;</span><br><span class="line">   &lt;/dataHost&gt;</span><br><span class="line">&lt;dataHost name=<span class="string">"localhost"</span> maxCon=<span class="string">"1000"</span> minCon=<span class="string">"10"</span> balance=<span class="string">"0"</span> writeType=<span class="string">"0"</span> dbType=<span class="string">"mysql"</span> dbDriver=<span class="string">"native"</span> switchType=<span class="string">"1"</span> slaveThreshold=<span class="string">"100"</span>&gt;</span><br><span class="line">       &lt;heartbeat&gt;select user();&lt;/heartbeat&gt;</span><br><span class="line">       &lt;writeHost host=<span class="string">"db-M2"</span> url=<span class="string">"localhost:3306"</span> user=<span class="string">"root"</span> password=<span class="string">"1234"</span>&gt;&lt;/writeHost&gt;</span><br><span class="line">   &lt;/dataHost&gt;</span><br></pre></td></tr></table></figure>
-<p>修改rule.xml 的mod-long节点数，上面配置了两个节点，所以这里count值为2,<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="keyword">function</span> name=<span class="string">"mod-long"</span> class=<span class="string">"io.mycat.route.function.PartitionByMod"</span>&gt;</span><br><span class="line">	&lt;!-- how many data nodes --&gt;</span><br><span class="line">      &lt;!-- count值与分片个数相同 --&gt;</span><br><span class="line">	&lt;property name=<span class="string">"count"</span>&gt;2&lt;/property&gt;</span><br><span class="line">&lt;/<span class="keyword">function</span>&gt;</span><br></pre></td></tr></table></figure></p>
-<p>重启mycat，验证是否生效。在对应两个切片下创建user表，连接逻辑数据库，插入数据，这时会根据节点数取模算法。关于分片取模算法：  根据id进行取模  根据数据库集群的数量（或者说是表数量，mycat里面一个表对应一个库）<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> <span class="keyword">user</span> (<span class="keyword">id</span>,<span class="keyword">name</span>,sex) <span class="keyword">values</span> (<span class="number">1</span>,<span class="string">'anna'</span>,<span class="string">'woman'</span>);</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> <span class="keyword">user</span> (<span class="keyword">id</span>,<span class="keyword">name</span>,sex) <span class="keyword">values</span> (<span class="number">2</span>,<span class="string">'bob'</span>,<span class="string">'man'</span>);</span><br></pre></td></tr></table></figure></p>
-<p>此时两个节点数据库下各有一条数据(插入数据节点是0开始计算的，意思就是你插入id=1的数据，1%2=1,那就是第二个节点dn2)，大功告成。这时如果在逻辑数据库上执行  <code>select * from user</code>  的原理其实执行的是：<br><code>select * from dn1.user</code>和<code>select * from dn2.user</code>，<br>最后把结果集给mycat进行封装 然后返回给客户端。</p>
-<p>带条件查询：<code>select * from db1.user where id =1</code><br>mycat会进行转换 1%3=1  在dn2上！转换成<code>select * from dn2.user where id = 1</code> ,即一次就能查出结果。</p>
-<p>分页查询：<code>select * from user limit 0,2</code><br>此时它会往两个节点里发送请求（<code>select * from dn1.user limit 0,2</code>  , <code>select * from dn2.user limit 0,2</code>），谁先返回则返回谁的结果（不信可以多运行几次sql）。<br>解决办法：<code>select * from user order by id desc limit 0,1</code>，加上排序后，返回的结果为两个节点所有数据排序后再分页的结果。<br><img src="https://img.yh0729.cn/mycat%E5%88%87%E7%89%87%E5%88%86%E9%A1%B5%E6%9F%A5%E8%AF%A2.png" alt="分页查询"></p>
-<h4 id="bug"><a href="#bug" class="headerlink" title="bug"></a>bug</h4><p><img src="https://img.yh0729.cn/mycat%E6%8A%A5%E9%94%99.png" alt="find no Route"><br>解决办法：修改schema.xml文件,checkSQLschema=”fasle”,改为true<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;schema name=<span class="string">"MYCAT_DB"</span> checkSQLschema=<span class="string">"true"</span> sqlMaxLimit=<span class="string">"100"</span>&gt;</span><br></pre></td></tr></table></figure></p>
-<h4 id="3-3-Mysql主从复制"><a href="#3-3-Mysql主从复制" class="headerlink" title="3.3 Mysql主从复制"></a>3.3 Mysql主从复制</h4><p>3.3.1 主库配置：<br>1.编辑linux目录下/etc/my.cnf （mysql的配置文件路径）<br><code>vim /etc/my.cnf</code><br>2.在文件的 [mysqld] 下 添加以代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">[mysqld]</span><br><span class="line">#示开启二进制日志，并把二进制日志前缀改为mysql-bin</span><br><span class="line">log-bin = mysql-bin</span><br><span class="line">#随意数字，只要和从库不相等即可</span><br><span class="line">server-id = 6</span><br><span class="line">#表示需要备份的数据库为test </span><br><span class="line">binlog-do-db = test</span><br><span class="line">#表示需要备份的数据库为mycat下的user表</span><br><span class="line">binlog-do-db = mycat.user</span><br></pre></td></tr></table></figure></p>
-<p>3.在mysql中创建一个用户<br><code>create user &#39;myslave&#39;@&#39;%&#39; identified by &#39;123456&#39;;</code></p>
-<p>4.给myslave用户配置主从复制的权限：<br><code>grant replication slave on *.* to &#39;myslave&#39;@&#39;%&#39; identified by &#39;123456&#39;;</code></p>
-<p>5.刷新权限：<code>flush privileges;</code></p>
-<p>6.查看主服务状态：<code>show master status;</code></p>
-<p>3.3.2从库配置<br>1.编辑mysql安装目录下的my.ini,如果没有自行百度，添加一个my.ini<br>2.在文件my.ini的[mysqld] 下 添加以代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">[mysqld]</span><br><span class="line">#示开启二进制日志，并把二进制日志前缀改为mysql-bin</span><br><span class="line">log-bin = mysql-bin</span><br><span class="line">#随意数字，只要和主库不相等即可</span><br><span class="line">server-id = 2</span><br><span class="line">#表示需要备份的数据库为test </span><br><span class="line">binlog-do-db = test</span><br><span class="line">#表示需要备份的数据库为mycat下的user表</span><br><span class="line">binlog-do-db = mycat.user</span><br></pre></td></tr></table></figure></p>
-<p> 待续。。。。</p>
+        <h2 id="linux下redis开启远程连接"><a href="#linux下redis开启远程连接" class="headerlink" title="linux下redis开启远程连接"></a>linux下redis开启远程连接</h2><p>步骤：<br>1.打开redis.conf文件<code>vim redis.conf</code><br>2.使用<code>/</code>命令搜索 daemonize no 改为 yes<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># By default Redis does not run as a daemon. Use 'yes' if you need it.</span></span><br><span class="line"><span class="comment"># Note that Redis will write a pid file in /var/run/redis.pid when daemonized.</span></span><br><span class="line">daemonize yes</span><br></pre></td></tr></table></figure></p>
+<p>3.搜索bind，注释掉,然后添加<code>bind 0.0.0.0</code><img src="http://" alt><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># Examples:</span></span><br><span class="line"><span class="comment"># bind 127.0.0.1 ::1</span></span><br><span class="line"><span class="built_in">bind</span> 0.0.0.0</span><br></pre></td></tr></table></figure></p>
+<p>4.搜索protected-mode，改为no<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># By default protected mode is enabled. You should disable it only if</span></span><br><span class="line"><span class="comment"># you are sure you want clients from other hosts to connect to Redis</span></span><br><span class="line"><span class="comment"># even if no authentication is configured, nor a specific set of interfaces</span></span><br><span class="line"><span class="comment"># are explicitly listed using the "bind" directive.</span></span><br><span class="line">protected-mode no</span><br></pre></td></tr></table></figure></p>
+<p>5.给redis设置密码,别直接添加，先搜索requirepass，确定文件里是否有默认，再修改，保证唯一性<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">################################## SECURITY ###################################</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Require clients to issue AUTH &lt;PASSWORD&gt; before processing any other</span></span><br><span class="line"><span class="comment"># commands.  This might be useful in environments in which you do not trust</span></span><br><span class="line"><span class="comment"># others with access to the host running redis-server.</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># This should stay commented out for backward compatibility and because most</span></span><br><span class="line"><span class="comment"># people do not need auth (e.g. they run their own servers).</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># Warning: since Redis is pretty fast an outside user can try up to</span></span><br><span class="line"><span class="comment"># 150k passwords per second against a good box. This means that you should</span></span><br><span class="line"><span class="comment"># use a very strong password otherwise it will be very easy to break.</span></span><br><span class="line"><span class="comment">#填写你的password</span></span><br><span class="line"> requirepass <span class="string">'123456'</span></span><br></pre></td></tr></table></figure></p>
+<p>6.根据你的配置文件，重启redis<br><code>./redis-server redis.conf</code></p>
+<p>7.可用本地连接测试，也可用redis可视化工具连接<code>./redis-cli -h 127.0.0.1 -p 6379 -a 1234</code><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">[root@izuf6dtic2d71rbvtn6126z redis-4.0.6]<span class="comment"># ls</span></span><br><span class="line">00-RELEASENOTES  CONTRIBUTING  deps      INSTALL   MANIFESTO  redis.conf  runtest-cluster   sentinel.conf  tests</span><br><span class="line">BUGS             COPYING       dump.rdb  Makefile  README.md  runtest     runtest-sentinel  src            utils</span><br><span class="line">[root@izuf6dtic2d71rbvtn6126z redis-4.0.6]<span class="comment"># cd ./src/</span></span><br><span class="line">[root@izuf6dtic2d71rbvtn6126z src]<span class="comment"># ./redis-cli -h ip地址 -p 6379 -a 密码</span></span><br><span class="line">101.132.191.145:6379&gt; keys *</span><br><span class="line">1) <span class="string">"name"</span></span><br><span class="line">101.132.191.145:6379&gt;</span><br></pre></td></tr></table></figure></p>
+<p><strong>注意：防火墙和服务器安全规则都需要开启redis对应端口</strong></p>
+<h2 id="常用命令："><a href="#常用命令：" class="headerlink" title="常用命令："></a>常用命令：</h2><p>在redis-cli目录下执行 <code>./redis-cli KEYS &quot;article-*&quot; | xargs redis-cli DEL</code> 删除 article-* 开头的key</p>
+<p>常用命令：<a href="https://www.runoob.com/redis/redis-commands.html" rel="external nofollow noopener noreferrer" target="_blank">传送门</a></p>
 
       
     </div>
@@ -634,6 +625,28 @@ daovoice('update');
     
     
     
+
+    
+    <div>
+      
+         
+<div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束❤感谢阅读-------------</div>
+    
+</div>
+
+      
+    </div>
+   
+    <div>
+          
+             
+
+
+          
+    </div>
+
 
     
 
@@ -676,42 +689,12 @@ daovoice('update');
     
 
     
-      <div>
-        
-
-
-
-
-  
-
-
-
-<ul class="post-copyright">
-  <li class="post-copyright-author">
-    <strong>本文作者： </strong>yh</li>
-  <li class="post-copyright-link">
-    <strong>本文链接：</strong>
-    
-    <a href="https:www.yh0729.cn/20190523/cjwilr1zp0001kwmu4i7x0yef.html" title="Mycat的配置和使用" rel="noopener" target="_blank">https:www.yh0729.cn/20190523/cjwilr1zp0001kwmu4i7x0yef.html</a>
-  </li>
-  <li class="post-copyright-license">
-    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow noopener noreferrer" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
-</ul>
-
-
-
-      </div>
-    
 
     <footer class="post-footer">
       
         <div class="post-tags">
           
-            <a href="/tags/中间件/" rel="tag"><i class="fa fa-tag"></i> 中间件</a>
-          
-            <a href="/tags/sql/" rel="tag"><i class="fa fa-tag"></i> sql</a>
-          
-            <a href="/tags/mycat/" rel="tag"><i class="fa fa-tag"></i> mycat</a>
+            <a href="/tags/redis/" rel="tag"><i class="fa fa-tag"></i> redis</a>
           
         </div>
       
@@ -745,8 +728,8 @@ daovoice('update');
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/20190522/cjwilr2b70015kwmuqj87d2uk.html" rel="next" title="算法整理">
-                <i class="fa fa-chevron-left"></i> 算法整理
+              <a href="/20190523/mycat-config.html" rel="next" title="Mycat的配置和使用">
+                <i class="fa fa-chevron-left"></i> Mycat的配置和使用
               </a>
             
           </div>
@@ -754,10 +737,6 @@ daovoice('update');
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/20190603/cjwilr2ax000xkwmu8ycxz01m.html" rel="prev" title="linux下redis开启远程连接">
-                linux下redis开启远程连接 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -946,6 +925,16 @@ daovoice('update');
           
 
           
+             <div class="cc-license motion-element" itemprop="license">
+              
+              
+                
+              
+              
+              
+              <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="external nofollow noopener noreferrer" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+             </div>
+          
 
           
           
@@ -983,7 +972,7 @@ daovoice('update');
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Mycat的配置和使用"><span class="nav-text">Mycat的配置和使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-Mycat简介："><span class="nav-text">1. Mycat简介：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-windows安装"><span class="nav-text">2.windows安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-使用"><span class="nav-text">3.使用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#3-1-文件目录："><span class="nav-text">3.1 文件目录：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-2-分表分库"><span class="nav-text">3.2 分表分库</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#bug"><span class="nav-text">bug</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-3-Mysql主从复制"><span class="nav-text">3.3 Mysql主从复制</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#linux下redis开启远程连接"><span class="nav-text">linux下redis开启远程连接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常用命令："><span class="nav-text">常用命令：</span></a></li></ol></div>
             
 
           </div>
@@ -1014,7 +1003,6 @@ daovoice('update');
 
   
 </div>
- 由 <a rel="external nofollow noopener noreferrer" class="theme-link" target="_blank" href="https://www.yh0729.cn">Hexo</a> 强力驱动
 
 
 
@@ -1031,21 +1019,14 @@ daovoice('update');
   <div class="BbeiAn-info" style="text-decoration:none;">
       鄂ICP备 -
       <a href="http://www.miitbeian.gov.cn/" rel="external nofollow noopener noreferrer" target="_blank">19012600号</a>&nbsp;&nbsp;
-     <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=42011602000644" rel="external nofollow noopener noreferrer">鄂公网安备 42011602000644号</a>  
+      <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=42011602000644" rel="external nofollow noopener noreferrer">鄂公网安备 42011602000644号</a>  
   </div>
-
-
-
-
-
-
-
 
 
 <script>
     var now = new Date(); 
     function createtime() { 
-        var grt= new Date("04/26/2019 9:00:00");//建站时间,喜提彩蛋
+        var grt= new Date("04/26/2019 9:00:00");//建站时间
         now.setTime(now.getTime()+250); 
         days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
         hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
@@ -1057,7 +1038,7 @@ daovoice('update');
         document.getElementById("times").innerHTML = hnum + " 时 " + mnum + " 分 " + snum + " 秒"; 
     } 
 setInterval("createtime()",250);
-console.log("Hello World!");
+console.log("恭喜你，喜提彩蛋！如需深入交流:),wx：Y6666660729H , qq:751978613");
 </script>
 
 
@@ -1675,7 +1656,24 @@ console.log("Hello World!");
 
   
 
+
 <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"left","width":300,"height":450},"mobile":{"show":true}});</script></body>
+<!--百度主动推送 -->
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
 <!--崩溃欺骗-->
 <!-- <script type="text/javascript" src="/js/crash_cheat.js"></script> -->
 </html>
