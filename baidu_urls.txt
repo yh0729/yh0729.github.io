@@ -1,3 +1,6 @@
+https:www.yh0729.cn/20190624/docker-jenkins.html
+https:www.yh0729.cn/20190624/docker-cmd.html
+https:www.yh0729.cn/20190624/mysqlbackup-linux.html
 https:www.yh0729.cn/20190603/linux-redis-kqyclj.html
 https:www.yh0729.cn/20190523/mycat-config.html
 https:www.yh0729.cn/20190522/algorithmic-Arrangement.html

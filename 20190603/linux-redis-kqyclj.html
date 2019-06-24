@@ -165,12 +165,10 @@ daovoice('update');
 <meta property="og:site_name" content="趁年轻别搞开发&#39;s blog">
 <meta property="og:description" content="linux下redis开启远程连接步骤：1.打开redis.conf文件vim redis.conf2.使用/命令搜索 daemonize no 改为 yes123# By default Redis does not run as a daemon. Use &apos;yes&apos; if you need it.# Note that Redis will write a pid file in /var/">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http:///">
 <meta property="og:updated_time" content="2019-06-04T07:03:40.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="linux下redis开启远程连接">
 <meta name="twitter:description" content="linux下redis开启远程连接步骤：1.打开redis.conf文件vim redis.conf2.使用/命令搜索 daemonize no 改为 yes123# By default Redis does not run as a daemon. Use &apos;yes&apos; if you need it.# Note that Redis will write a pid file in /var/">
-<meta name="twitter:image" content="http:///">
 
 
 
@@ -604,7 +602,7 @@ daovoice('update');
 
       
         <h2 id="linux下redis开启远程连接"><a href="#linux下redis开启远程连接" class="headerlink" title="linux下redis开启远程连接"></a>linux下redis开启远程连接</h2><p>步骤：<br>1.打开redis.conf文件<code>vim redis.conf</code><br>2.使用<code>/</code>命令搜索 daemonize no 改为 yes<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># By default Redis does not run as a daemon. Use 'yes' if you need it.</span></span><br><span class="line"><span class="comment"># Note that Redis will write a pid file in /var/run/redis.pid when daemonized.</span></span><br><span class="line">daemonize yes</span><br></pre></td></tr></table></figure></p>
-<p>3.搜索bind，注释掉,然后添加<code>bind 0.0.0.0</code><img src="http://" alt><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># Examples:</span></span><br><span class="line"><span class="comment"># bind 127.0.0.1 ::1</span></span><br><span class="line"><span class="built_in">bind</span> 0.0.0.0</span><br></pre></td></tr></table></figure></p>
+<p>3.搜索bind，注释掉,然后添加<code>bind 0.0.0.0</code><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># Examples:</span></span><br><span class="line"><span class="comment"># bind 127.0.0.1 ::1</span></span><br><span class="line"><span class="built_in">bind</span> 0.0.0.0</span><br></pre></td></tr></table></figure></p>
 <p>4.搜索protected-mode，改为no<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># By default protected mode is enabled. You should disable it only if</span></span><br><span class="line"><span class="comment"># you are sure you want clients from other hosts to connect to Redis</span></span><br><span class="line"><span class="comment"># even if no authentication is configured, nor a specific set of interfaces</span></span><br><span class="line"><span class="comment"># are explicitly listed using the "bind" directive.</span></span><br><span class="line">protected-mode no</span><br></pre></td></tr></table></figure></p>
 <p>5.给redis设置密码,别直接添加，先搜索requirepass，确定文件里是否有默认，再修改，保证唯一性<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">################################## SECURITY ###################################</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Require clients to issue AUTH &lt;PASSWORD&gt; before processing any other</span></span><br><span class="line"><span class="comment"># commands.  This might be useful in environments in which you do not trust</span></span><br><span class="line"><span class="comment"># others with access to the host running redis-server.</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># This should stay commented out for backward compatibility and because most</span></span><br><span class="line"><span class="comment"># people do not need auth (e.g. they run their own servers).</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># Warning: since Redis is pretty fast an outside user can try up to</span></span><br><span class="line"><span class="comment"># 150k passwords per second against a good box. This means that you should</span></span><br><span class="line"><span class="comment"># use a very strong password otherwise it will be very easy to break.</span></span><br><span class="line"><span class="comment">#填写你的password</span></span><br><span class="line"> requirepass <span class="string">'123456'</span></span><br></pre></td></tr></table></figure></p>
 <p>6.根据你的配置文件，重启redis<br><code>./redis-server redis.conf</code></p>
@@ -738,6 +736,10 @@ daovoice('update');
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/20190624/mysqlbackup-linux.html" rel="prev" title="linux下mysql自动备份">
+                linux下mysql自动备份 <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -811,7 +813,7 @@ daovoice('update');
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">12</span>
+                    <span class="site-state-item-count">15</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -840,7 +842,15 @@ daovoice('update');
                     
                       
                     
-                    <span class="site-state-item-count">6</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">10</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -875,7 +885,17 @@ daovoice('update');
                     
                       
                     
-                    <span class="site-state-item-count">9</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">14</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -937,20 +957,6 @@ daovoice('update');
           
 
           
-          
-            <div class="links-of-blogroll motion-element links-of-blogroll-block">
-              <div class="links-of-blogroll-title">
-                <i class="fa  fa-fw fa-link"></i>
-                友情链接
-              </div>
-              <ul class="links-of-blogroll-list">
-                
-                  <li class="links-of-blogroll-item">
-                    <a href="https://blog.enjoytoshare.club" title="https://blog.enjoytoshare.club" rel="external nofollow noopener noreferrer" target="_blank">WuGenQiang's blog</a>
-                  </li>
-                
-              </ul>
-            </div>
           
 
           
@@ -1212,7 +1218,7 @@ console.log("恭喜你，喜提彩蛋！如需深入交流:),wx：Y6666660729H ,
     lang: '' || 'zh-cn'
   });
    //增加以下六行代码去除 power by valine
-   var infoEle = document.querySelector('#comments .info');
+ var infoEle = document.querySelector('#comments .info');
     if (infoEle && infoEle.childNodes && infoEle.childNodes.length > 0){
       infoEle.childNodes.forEach(function(item) {
         item.parentNode.removeChild(item);

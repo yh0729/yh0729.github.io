@@ -2,6 +2,34 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https:www.yh0729.cn/20190624/docker-jenkins.html</loc>
+    
+    <lastmod>2019-06-24T05:58:40.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https:www.yh0729.cn/20190624/docker-cmd.html</loc>
+    
+    <lastmod>2019-06-24T03:36:38.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https:www.yh0729.cn/20190624/mysqlbackup-linux.html</loc>
+    
+    <lastmod>2019-06-24T03:20:55.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https:www.yh0729.cn/20190523/mycat-config.html</loc>
+    
+    <lastmod>2019-06-24T03:18:25.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https:www.yh0729.cn/20190508/leet0508-shares.html</loc>
     
     <lastmod>2019-06-05T09:21:33.000Z</lastmod>
@@ -54,13 +82,6 @@
     <loc>https:www.yh0729.cn/20190603/linux-redis-kqyclj.html</loc>
     
     <lastmod>2019-06-04T07:03:40.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https:www.yh0729.cn/20190523/mycat-config.html</loc>
-    
-    <lastmod>2019-06-04T06:52:25.000Z</lastmod>
     
   </url>
   
