@@ -39,7 +39,13 @@
       <category term="docker" scheme="https:www.yh0729.cn/categories/jenkins/docker/"/>
     
     
-      <category term="自动化部署,docker,jenkins,tomcat" scheme="https:www.yh0729.cn/tags/%E8%87%AA%E5%8A%A8%E5%8C%96%E9%83%A8%E7%BD%B2-docker-jenkins-tomcat/"/>
+      <category term="自动化部署" scheme="https:www.yh0729.cn/tags/%E8%87%AA%E5%8A%A8%E5%8C%96%E9%83%A8%E7%BD%B2/"/>
+    
+      <category term="docker" scheme="https:www.yh0729.cn/tags/docker/"/>
+    
+      <category term="jenkins" scheme="https:www.yh0729.cn/tags/jenkins/"/>
+    
+      <category term="tomcat" scheme="https:www.yh0729.cn/tags/tomcat/"/>
     
   </entry>
   

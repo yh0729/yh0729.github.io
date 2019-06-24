@@ -9,7 +9,10 @@
         <category>docker</category>
       </categories>
       <tags>
-        <tag>自动化部署,docker,jenkins,tomcat</tag>
+        <tag>自动化部署</tag>
+        <tag>docker</tag>
+        <tag>jenkins</tag>
+        <tag>tomcat</tag>
       </tags>
   </entry>
   <entry>
