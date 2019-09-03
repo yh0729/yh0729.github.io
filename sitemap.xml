@@ -2,6 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https:www.yh0729.cn/20190903/aliyuncdn.html</loc>
+    
+    <lastmod>2019-09-03T07:47:01.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https:www.yh0729.cn/20190429/linuxcommand.html</loc>
+    
+    <lastmod>2019-08-13T03:28:01.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https:www.yh0729.cn/20190710/clearYum-linux.html</loc>
+    
+    <lastmod>2019-07-10T08:27:13.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https:www.yh0729.cn/20190624/docker-jenkins.html</loc>
     
     <lastmod>2019-06-24T05:58:40.000Z</lastmod>
@@ -117,13 +138,6 @@
     <loc>https:www.yh0729.cn/tags/index.html</loc>
     
     <lastmod>2019-05-07T07:02:58.556Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https:www.yh0729.cn/20190429/linuxcommand.html</loc>
-    
-    <lastmod>2019-04-29T07:32:01.000Z</lastmod>
     
   </url>
   
