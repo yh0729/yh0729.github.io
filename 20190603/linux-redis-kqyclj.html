@@ -605,7 +605,7 @@ daovoice('update');
 <p>3.搜索bind，注释掉,然后添加<code>bind 0.0.0.0</code><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># Examples:</span></span><br><span class="line"><span class="comment"># bind 127.0.0.1 ::1</span></span><br><span class="line"><span class="built_in">bind</span> 0.0.0.0</span><br></pre></td></tr></table></figure></p>
 <p>4.搜索protected-mode，改为no<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># By default protected mode is enabled. You should disable it only if</span></span><br><span class="line"><span class="comment"># you are sure you want clients from other hosts to connect to Redis</span></span><br><span class="line"><span class="comment"># even if no authentication is configured, nor a specific set of interfaces</span></span><br><span class="line"><span class="comment"># are explicitly listed using the "bind" directive.</span></span><br><span class="line">protected-mode no</span><br></pre></td></tr></table></figure></p>
 <p>5.给redis设置密码,别直接添加，先搜索requirepass，确定文件里是否有默认，再修改，保证唯一性<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">################################## SECURITY ###################################</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Require clients to issue AUTH &lt;PASSWORD&gt; before processing any other</span></span><br><span class="line"><span class="comment"># commands.  This might be useful in environments in which you do not trust</span></span><br><span class="line"><span class="comment"># others with access to the host running redis-server.</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># This should stay commented out for backward compatibility and because most</span></span><br><span class="line"><span class="comment"># people do not need auth (e.g. they run their own servers).</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># Warning: since Redis is pretty fast an outside user can try up to</span></span><br><span class="line"><span class="comment"># 150k passwords per second against a good box. This means that you should</span></span><br><span class="line"><span class="comment"># use a very strong password otherwise it will be very easy to break.</span></span><br><span class="line"><span class="comment">#填写你的password</span></span><br><span class="line"> requirepass <span class="string">'123456'</span></span><br></pre></td></tr></table></figure></p>
-<p>6.根据你的配置文件，重启redis<br><code>./redis-server redis.conf</code></p>
+<p>6.根据你的配置文件，启动redis (进入src目录下，指定redis.conf配置文件启动)<br><code>./redis-server ../redis.conf</code></p>
 <p>7.可用本地连接测试，也可用redis可视化工具连接<code>./redis-cli -h 127.0.0.1 -p 6379 -a 1234</code><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">[root@izuf6dtic2d71rbvtn6126z redis-4.0.6]<span class="comment"># ls</span></span><br><span class="line">00-RELEASENOTES  CONTRIBUTING  deps      INSTALL   MANIFESTO  redis.conf  runtest-cluster   sentinel.conf  tests</span><br><span class="line">BUGS             COPYING       dump.rdb  Makefile  README.md  runtest     runtest-sentinel  src            utils</span><br><span class="line">[root@izuf6dtic2d71rbvtn6126z redis-4.0.6]<span class="comment"># cd ./src/</span></span><br><span class="line">[root@izuf6dtic2d71rbvtn6126z src]<span class="comment"># ./redis-cli -h ip地址 -p 6379 -a 密码</span></span><br><span class="line">101.132.191.145:6379&gt; keys *</span><br><span class="line">1) <span class="string">"name"</span></span><br><span class="line">101.132.191.145:6379&gt;</span><br></pre></td></tr></table></figure></p>
 <p><strong>注意：防火墙和服务器安全规则都需要开启redis对应端口</strong></p>
 <h2 id="常用命令："><a href="#常用命令：" class="headerlink" title="常用命令："></a>常用命令：</h2><p>在redis-cli目录下执行 <code>./redis-cli KEYS &quot;article-*&quot; | xargs redis-cli DEL</code> 删除 article-* 开头的key</p>
@@ -813,7 +813,7 @@ daovoice('update');
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">17</span>
+                    <span class="site-state-item-count">21</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -860,7 +860,9 @@ daovoice('update');
                     
                       
                     
-                    <span class="site-state-item-count">12</span>
+                      
+                    
+                    <span class="site-state-item-count">15</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -915,7 +917,13 @@ daovoice('update');
                     
                       
                     
-                    <span class="site-state-item-count">18</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">22</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -1019,7 +1027,7 @@ daovoice('update');
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
   <span class="with-love" id="animate">
     <i class="fa fa-heart"></i>
   </span>

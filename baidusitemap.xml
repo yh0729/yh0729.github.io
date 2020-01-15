@@ -1,11 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https:www.yh0729.cn/20200115/rabbitmq_study.html</loc>
+    <lastmod>2020-01-15</lastmod>
+  </url>  <url>
+    <loc>https:www.yh0729.cn/20190819/socket.html</loc>
+    <lastmod>2019-10-29</lastmod>
+  </url>  <url>
     <loc>https:www.yh0729.cn/20190903/aliyuncdn.html</loc>
     <lastmod>2019-09-03</lastmod>
   </url>  <url>
+    <loc>https:www.yh0729.cn/20190830/https.html</loc>
+    <lastmod>2019-08-30</lastmod>
+  </url>  <url>
     <loc>https:www.yh0729.cn/20190429/linuxcommand.html</loc>
     <lastmod>2019-08-13</lastmod>
+  </url>  <url>
+    <loc>https:www.yh0729.cn/20190710/installElasticsearch-docker.html</loc>
+    <lastmod>2019-07-10</lastmod>
   </url>  <url>
     <loc>https:www.yh0729.cn/20190710/clearYum-linux.html</loc>
     <lastmod>2019-07-10</lastmod>
